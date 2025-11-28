@@ -3,610 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Nour</title>
+    <title>?</title>
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/192/mosque.png">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/192/mosque.png">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#1a2e28">
     <meta name="apple-mobile-web-app-title" content="Nour">
     
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/192/mosque.png">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/192/mosque.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
-       /* --- DESIGN SYSTEM "NOUR - TOTAL BLACK" --- */
-:root {
-    --bg-deep: #050a08;     /* Noir profond */
-    --primary: #4e8c75;     /* Vert élégant */
-    --accent: #d4af37;      /* Doré */
-    --text-main: #f0f0f0;   /* Blanc cassé */
-    --text-muted: #aaaaaa;  /* Gris */
-    
-    /* STYLE VERRE (GLASSMORPHISM) */
-    --glass-bg: rgba(20, 30, 25, 0.7); 
-    --glass-border: rgba(212, 175, 55, 0.25);
-    --glass-blur: blur(12px);
-
-    /* POLICES */
-    --font-title: 'Cinzel', serif;
-    --font-body: 'Lato', sans-serif;
-}
-
+        /* ================================================= */
+        /* ZONE 1 : LE CSS                                   */
+        /* Va sur CodePen -> Onglet [CSS]                    */
+        /* Copie tout et colle-le JUSTE EN DESSOUS 👇        */
+        :root { --bg-deep: #050a08; --primary: #4e8c75; --accent: #d4af37; --text-main: #f0f0f0; --text-muted: #aaaaaa; --glass-bg: rgba(20, 30, 25, 0.7); --glass-border: rgba(212, 175, 55, 0.25); --glass-blur: blur(12px); --font-title: 'Cinzel', serif; --font-body: 'Lato', sans-serif; }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-body {
-    font-family: var(--font-body);
-    background-color: var(--bg-deep);
-    color: var(--text-main);
-    margin: 0; padding: 0; height: 100vh;
-    display: flex; flex-direction: column; overflow: hidden;
-}
-
-/* --- FOND ANIMÉ --- */
-.animated-background {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-    background: radial-gradient(circle at bottom center, #1b2e28 0%, #000000 100%);
-}
-.animated-background span {
-    position: absolute; display: block; width: 20px; height: 20px; background: var(--accent);
-    border-radius: 50%; opacity: 0; animation: animate 25s linear infinite; bottom: -150px;
-    box-shadow: 0 0 20px var(--accent);
-}
-.animated-background span:nth-child(1) { left: 25%; width: 30px; height: 30px; animation-duration: 20s; opacity: 0.2; }
-.animated-background span:nth-child(2) { left: 10%; width: 10px; height: 10px; animation-delay: 2s; animation-duration: 25s; opacity: 0.3; }
-.animated-background span:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; animation-duration: 18s; opacity: 0.15; }
-.animated-background span:nth-child(4) { left: 40%; width: 40px; height: 40px; animation-duration: 22s; opacity: 0.1; }
-@keyframes animate {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    50% { opacity: 0.4; }
-    100% { transform: translateY(-120vh) rotate(720deg); opacity: 0; }
-}
-
-/* --- ÉCRANS --- */
-.screen {
-    display: none; flex-direction: column; height: 100%; width: 100%;
-    position: absolute; top: 0; left: 0; overflow-y: auto;
-    background: transparent; -webkit-overflow-scrolling: touch;
-}
+body { font-family: var(--font-body); background-color: var(--bg-deep); color: var(--text-main); margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+.animated-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at bottom center, #1b2e28 0%, #000000 100%); }
+.animated-background span { position: absolute; display: block; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; opacity: 0; animation: animate 25s linear infinite; bottom: -150px; box-shadow: 0 0 20px var(--accent); }
+.animated-background span:nth-child(1) { left: 25%; width: 30px; animation-duration: 20s; opacity: 0.2; }
+.animated-background span:nth-child(2) { left: 10%; width: 10px; animation-delay: 2s; opacity: 0.3; }
+.animated-background span:nth-child(3) { left: 70%; width: 20px; animation-delay: 4s; opacity: 0.15; }
+.animated-background span:nth-child(4) { left: 40%; width: 40px; animation-duration: 22s; opacity: 0.1; }
+@keyframes animate { 0% { transform: translateY(0) rotate(0deg); opacity: 0; } 50% { opacity: 0.4; } 100% { transform: translateY(-120vh) rotate(720deg); opacity: 0; } }
+.screen { display: none; flex-direction: column; height: 100%; width: 100%; position: absolute; top: 0; left: 0; overflow-y: auto; background: transparent; -webkit-overflow-scrolling: touch; }
 .active { display: flex; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .fade-in { animation: fadeIn 0.5s ease-out forwards; }
-
-/* --- ACCUEIL --- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 #screen-home { justify-content: center; align-items: center; text-align: center; padding: 40px 20px; }
-.logo-circle {
-    width: 90px; height: 90px; border: 2px solid var(--accent); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;
-    font-size: 2.5rem; color: var(--accent); background: rgba(0,0,0,0.3);
-}
+.logo-circle { width: 90px; height: 90px; border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 2.5rem; color: var(--accent); background: rgba(0,0,0,0.3); }
 h1 { font-family: var(--font-title); font-size: 3.5rem; margin: 0; color: #fff; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 .subtitle { font-size: 1rem; text-transform: uppercase; letter-spacing: 5px; color: var(--accent); margin-top: 10px; opacity: 0.8; }
-
-/* --- CARTE DU JOUR --- */
-.daily-card {
-    background: var(--glass-bg); border: 1px solid var(--glass-border);
-    border-radius: 20px; padding: 25px; margin: 20px 10px; text-align: center;
-    backdrop-filter: var(--glass-blur);
-}
+.daily-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 25px; margin: 20px 10px; text-align: center; backdrop-filter: var(--glass-blur); }
 .daily-label { font-size: 0.75rem; color: var(--accent); font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
 #daily-hadith-text { font-family: var(--font-title); font-size: 1.1rem; line-height: 1.6; color: #fff; font-style: italic; }
 .daily-source { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; }
-
-/* --- BOUTONS --- */
-.btn-enter {
-    background: linear-gradient(135deg, var(--accent), #b88a2d);
-    color: #000; padding: 16px 0; width: 100%; border: none; border-radius: 50px;
-    font-size: 1rem; font-weight: 700; letter-spacing: 1px; cursor: pointer; margin-bottom: 15px;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-}
+.btn-enter { background: linear-gradient(135deg, var(--accent), #b88a2d); color: #000; padding: 16px 0; width: 100%; border: none; border-radius: 50px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-bottom: 15px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
 .btn-back { background: none; border: none; font-size: 1rem; color: var(--accent); font-weight: bold; cursor: pointer; }
-
-/* --- DASHBOARD --- */
+.footer-count { position: absolute; bottom: 20px; width: 100%; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.8rem; }
 .dashboard-grid { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
-.dash-card, .menu-card {
-    background: var(--glass-bg); backdrop-filter: var(--glass-blur);
-    border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 20px;
-    display: flex; align-items: center; cursor: pointer;
-}
-.dash-icon, .menu-icon { font-size: 2rem; margin-right: 20px; color: var(--accent); }
-.dash-content h3, .menu-title { margin: 0; color: #fff; font-family: var(--font-title); font-size: 1.2rem; }
-.dash-content p { margin: 5px 0 0 0; color: var(--text-muted); font-size: 0.9rem; }
+.dash-card, .menu-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; display: flex !important; align-items: center !important; cursor: pointer; min-height: 120px !important; }
+.dash-icon, .menu-icon { font-size: 2rem; margin-right: 20px !important; color: var(--accent); width: 60px !important; height: 60px !important; min-width: 60px !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+.menu-card { flex-direction: column; text-align: center; } .menu-card .menu-icon { margin-right: 0 !important; margin-bottom: 15px; }
+.dash-content h3 { margin: 0 0 5px 0 !important; color: #fff; font-family: var(--font-title); font-size: 1.2rem; line-height: 1.2; }
+.dash-content p { margin: 0 !important; color: var(--text-muted); font-size: 0.9rem; }
 .dash-arrow { color: var(--accent); font-size: 1.5rem; margin-left: auto; }
-
-/* --- LISTE HADITHS (Le correctif est ici) --- */
+.mini-prayer-item { background: rgba(255,255,255,0.05); padding: 8px 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+.mini-prayer-name { color: #ccc; } .mini-prayer-time { color: var(--accent); font-weight: bold; font-family: monospace; }
+.mini-prayer-item.next { border: 1px solid var(--accent); background: rgba(212, 175, 55, 0.1); }
 .hadith-container { padding: 20px; }
-.hadith-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 25px;
-    margin-bottom: 20px;
-    position: relative;
-}
-.tag { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; display: block; margin-bottom: 10px; }
+.hadith-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: 16px; padding: 25px; margin-bottom: 20px; position: relative; }
+.hadith-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.btn-fav { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: rgba(255,255,255,0.3); transition: transform 0.2s, color 0.2s; padding:0; line-height:1; }
+.btn-fav.active { color: #e74c3c; transform: scale(1.2); }
+.tag { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; }
 .hadith-text { font-family: var(--font-title); font-size: 1.15rem; line-height: 1.6; color: #fff; margin-bottom: 20px; }
 .hadith-source { font-size: 0.85rem; color: var(--text-muted); text-align: right; font-style: italic; }
-
-/* --- NAVIGATION --- */
-.top-bar { 
-    display: flex; align-items: center; justify-content: space-between; 
-    padding: 20px; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px);
-}
+.top-bar { display: flex; align-items: center; justify-content: space-between; padding: 20px; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); z-index: 10; }
 .nav-header { text-align: center; padding: 20px; }
 .nav-header h2 { font-family: var(--font-title); font-size: 2rem; color: #fff; margin: 0; }
 .search-area { padding: 10px 20px; }
-input, select {
-    width: 100%; padding: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px; color: #fff; margin-bottom: 10px; font-size: 1rem;
-}
-
-/* --- QUIZ (Le correctif est ici) --- */
-#options-container {
-    display: flex; flex-direction: column; gap: 15px; width: 100%; margin-top: 30px;
-}
-.option-btn {
-    width: 100%; padding: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    color: #fff; font-size: 1.1rem; text-align: left;
-    cursor: pointer; transition: background 0.2s;
-    font-family: var(--font-body);
-}
-/* --- STYLE DU LECTEUR CORAN --- */
-
-/* Le conteneur du lecteur audio */
-.audio-player-container {
-    background: var(--glass-bg);
-    border: 1px solid var(--accent);
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-    position: sticky; /* Reste collé en haut quand on scrolle */
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* Le texte Arabe */
-.ayah-arabic {
-    font-family: 'Amiri', serif; /* Police arabe classique si dispo */
-    font-size: 1.8rem;
-    color: #fff;
-    text-align: right;
-    line-height: 2.2;
-    margin-bottom: 15px;
-    direction: rtl; /* Droite à gauche */
-}
-
-/* La traduction Française */
-.ayah-french {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--text-muted);
-    text-align: left;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Le numéro du verset */
-.ayah-number {
-    display: inline-block;
-    width: 30px; height: 30px;
-    background: var(--accent);
-    color: #000;
-    border-radius: 50%;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-align: center;
-    line-height: 30px;
-    margin-left: 10px;
-}
-/* =========================================
-   MODULE CORAN (API & LECTEUR) 🕌
-   ========================================= */
-
-// Liste simplifiée pour le menu (Nom Phonétique)
-const surahNames = [
-    "Al-Fatiha", "Al-Baqara", "Al-Imran", "An-Nisa", "Al-Ma'ida", "Al-An'am", "Al-A'raf", "Al-Anfal", "At-Tawba", "Yunus",
-    "Hud", "Yusuf", "Ar-Ra'd", "Ibrahim", "Al-Hijr", "An-Nahl", "Al-Isra", "Al-Kahf", "Maryam", "Ta-Ha",
-    "Al-Anbiya", "Al-Hajj", "Al-Mu'minun", "An-Nur", "Al-Furqan", "Ash-Shu'ara", "An-Naml", "Al-Qasas", "Al-Ankabut", "Ar-Rum",
-    "Luqman", "As-Sajda", "Al-Ahzab", "Saba", "Fatir", "Ya-Sin", "As-Saffat", "Sad", "Az-Zumar", "Ghafir",
-    "Fussilat", "Ash-Shura", "Az-Zukhruf", "Ad-Dukhan", "Al-Jathiya", "Al-Ahqaf", "Muhammad", "Al-Fath", "Al-Hujurat", "Qaf",
-    "Ad-Dhariyat", "At-Tur", "An-Najm", "Al-Qamar", "Ar-Rahman", "Al-Waqi'a", "Al-Hadid", "Al-Mujadila", "Al-Hashr", "Al-Mumtahana",
-    "As-Saff", "Al-Jumu'a", "Al-Munafiqun", "At-Taghabun", "At-Talaq", "At-Tahrim", "Al-Mulk", "Al-Qalam", "Al-Haqqa", "Al-Ma'arij",
-    "Nuh", "Al-Jinn", "Al-Muzzammil", "Al-Muddathir", "Al-Qiyama", "Al-Insan", "Al-Mursalat", "An-Naba", "An-Nazi'at", "Abasa",
-    "At-Takwir", "Al-Infitar", "Al-Mutaffifin", "Al-Inshiqaq", "Al-Buruj", "At-Tariq", "Al-A'la", "Al-Ghashiya", "Al-Fajr", "Al-Balad",
-    "Ash-Shams", "Al-Layl", "Ad-Duha", "Ash-Sharh", "At-Tin", "Al-Alaq", "Al-Qadr", "Al-Bayyina", "Az-Zalzala", "Al-Adiyat",
-    "Al-Qari'a", "At-Takathur", "Al-Asr", "Al-Humaza", "Al-Fil", "Quraysh", "Al-Ma'un", "Al-Kawthar", "Al-Kafirun", "An-Nasr",
-    "Al-Masad", "Al-Ikhlas", "Al-Falaq", "An-Nas"
-];
-
-// Fonction pour ouvrir le menu Coran
-function openQuran() {
-    showScreen('screen-quran');
-    document.getElementById('surah-list-view').style.display = 'grid'; // Affiche la liste
-    document.getElementById('surah-reader-view').style.display = 'none'; // Cache le lecteur
-    
-    const container = document.getElementById('surah-list-view');
-    
-    // On génère la liste seulement si elle est vide
-    if(container.innerHTML === "") {
-        surahNames.forEach((name, index) => {
-            const num = index + 1;
-            const card = document.createElement('div');
-            card.className = 'dash-card';
-            card.style.marginBottom = '0';
-            card.innerHTML = `
-                <div class="dash-icon" style="font-size: 1rem; width: 40px; height: 40px;">${num}</div>
-                <div class="dash-content"><h3 style="font-size: 1rem;">${name}</h3></div>
-                <div class="dash-arrow">→</div>
-            `;
-            // Au clic, on charge la sourate
-            card.onclick = () => loadSurahContent(num, name);
-            container.appendChild(card);
-        });
-    }
-}
-
-// Fonction pour charger et lire une sourate (API)
-async function loadSurahContent(number, name) {
-    // 1. Changer d'interface (Cacher liste, montrer lecteur)
-    document.getElementById('surah-list-view').style.display = 'none';
-    const readerView = document.getElementById('surah-reader-view');
-    readerView.style.display = 'block';
-    
-    // 2. Reset du lecteur
-    document.getElementById('player-title').innerText = name;
-    document.getElementById('quran-text-container').innerHTML = '<p style="text-align:center; margin-top:50px;">Chargement du texte et de l\'audio...<br>⏳</p>';
-    
-    // 3. Charger l'Audio (Mishary Rashid Alafasy)
-    // On formatte le numéro pour avoir 3 chiffres (ex: 001, 012, 114)
-    const paddedNum = String(number).padStart(3, '0');
-    const audioUrl = `https://server8.mp3quran.net/afs/${paddedNum}.mp3`;
-    const audioPlayer = document.getElementById('quran-audio');
-    audioPlayer.src = audioUrl;
-    
-    // 4. Charger le Texte (Arabe + Français) via API
-    try {
-        const response = await fetch(`https://api.alquran.cloud/v1/surah/${number}/editions/quran-uthmani,fr.hamidullah`);
-        const data = await response.json();
-        
-        const arabicData = data.data[0].ayahs;
-        const frenchData = data.data[1].ayahs;
-        
-        let htmlContent = "";
-        
-        // Boucle sur chaque verset
-        arabicData.forEach((ayah, index) => {
-            const frenchText = frenchData[index].text;
-            const verseNum = ayah.numberInSurah;
-            
-            htmlContent += `
-                <div class="ayah-block">
-                    <div class="ayah-arabic">
-                        ${ayah.text} <span class="ayah-number">${verseNum}</span>
-                    </div>
-                    <div class="ayah-french">
-                        ${frenchText}
-                    </div>
-                </div>
-            `;
-        });
-        
-        document.getElementById('quran-text-container').innerHTML = htmlContent;
-        
-    } catch (error) {
-        document.getElementById('quran-text-container').innerHTML = '<p style="color:red; text-align:center;">Erreur de chargement. Vérifiez votre connexion.</p>';
-    }
-}
-
-// Fonction bouton "Retour" (Revient à la liste des sourates)
-function closeQuranReader() {
-    const listView = document.getElementById('surah-list-view');
-    const readerView = document.getElementById('surah-reader-view');
-    
-    // Si on est dans le lecteur, on revient à la liste
-    if (readerView.style.display === 'block') {
-        readerView.style.display = 'none';
-        listView.style.display = 'grid';
-        // Arrêter l'audio quand on quitte
-        document.getElementById('quran-audio').pause();
-    } else {
-        // Sinon on revient au Dashboard
-        showScreen('screen-dashboard');
-    }
-}
-
-/* --- FORCE COULEURS QUIZ (CORRECTIF FINAL) --- */
-
-/* Quand la réponse est bonne : VERT VIF */
-.option-btn.correct {
-    background-color: #27ae60 !important;  /* Vert solide (pas transparent) */
-    border-color: #2ecc71 !important;      /* Bordure vert clair */
-    color: white !important;               /* Texte blanc */
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.6) !important; /* Halo lumineux */
-    font-weight: bold;
-    transform: scale(1.02); /* Petit effet de grossissement */
-}
-
-/* Quand la réponse est fausse : ROUGE VIF */
-.option-btn.wrong {
-    background-color: #c0392b !important;  /* Rouge solide */
-    border-color: #e74c3c !important;      /* Bordure rouge clair */
-    color: white !important;
-    box-shadow: 0 0 20px rgba(231, 76, 60, 0.6) !important;
-    opacity: 0.8; /* On l'assombrit un peu pour montrer que c'est "éteint" */
-}
-/* --- STYLE DES FAVORIS --- */
-.hadith-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-.btn-fav {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.3); /* Cœur vide (gris/transparent) */
-    transition: transform 0.2s, color 0.2s;
-    padding: 0;
-    line-height: 1;
-}
-
-.btn-fav.active {
-    color: #e74c3c; /* Cœur plein (Rouge) */
-    transform: scale(1.2); /* Petit effet de grossissement */
-    text-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
-}
-
-.btn-fav:active { transform: scale(0.9); }
-/* --- GRILLE DES 99 NOMS --- */
-.names-grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Colonnes strictes */
-    gap: 10px;
-    padding: 15px;
-    padding-bottom: 50px;
-}
-
-.name-mini-card {
-    background: var(--glass-bg);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 15px 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-    backdrop-filter: blur(5px);
-}
-.name-mini-card:active { transform: scale(0.95); background: rgba(212, 175, 55, 0.2); }
-
-.mini-arabic { font-family: 'Amiri', serif; font-size: 1.2rem; color: #fff; margin-bottom: 5px; }
-.mini-trans { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
-
-/* --- MODAL & EFFET FLIP 3D (LA MAGIE) --- */
-.modal-overlay {
-    display: none; /* Caché par défaut */
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85); /* Fond noir transparent */
-    z-index: 1000;
-    justify-content: center; align-items: center;
-    backdrop-filter: blur(8px);
-}
-
-/* La boîte qui contient la carte */
-.flip-card {
-    background-color: transparent;
-    width: 280px; height: 350px;
-    perspective: 1000px; /* Donne la profondeur 3D */
-}
-
-/* Le conteneur qui tourne */
-.flip-card-inner {
-    position: relative; width: 100%; height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-/* L'action de tourner */
-.flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-/* Les deux faces de la carte */
-.flip-card-front, .flip-card-back {
-    position: absolute; width: 100%; height: 100%;
-    -webkit-backface-visibility: hidden; /* Cache le dos */
-    backface-visibility: hidden;
-    border-radius: 20px;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
-    padding: 20px;
-}
-
-/* Face Avant (Style) */
-.flip-card-front {
-    background: linear-gradient(135deg, #1a2e28, #000);
-}
-.big-arabic { font-family: 'Amiri', serif; font-size: 3.5rem; color: #fff; margin-bottom: 10px; }
-.modal-subtitle { color: var(--accent); font-size: 1.2rem; letter-spacing: 2px; }
-.tap-hint { position: absolute; bottom: 20px; font-size: 0.7rem; color: #666; animation: pulse 2s infinite; }
-
-/* Face Arrière (Style) */
-.flip-card-back {
-    background: var(--accent); /* Fond doré pour le dos */
-    color: #000;
-    transform: rotateY(180deg);
-}
-.flip-card-back h3 { color: #000; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
-.flip-card-back p { font-size: 1.1rem; line-height: 1.6; font-weight: 600; }
-
-@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
-/* --- STYLE HORAIRES PRIÈRES --- */
-.prayer-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--glass-bg);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 15px 20px;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    backdrop-filter: blur(5px);
-    transition: transform 0.2s;
-}
-
-.prayer-name {
-    font-weight: bold;
-    color: #fff;
-    font-family: var(--font-title);
-    font-size: 1.1rem;
-}
-
-.prayer-time {
-    font-family: 'Courier New', monospace; /* Style horloge digitale */
-    font-weight: bold;
-    color: var(--accent);
-    font-size: 1.2rem;
-    background: rgba(0,0,0,0.3);
-    padding: 5px 10px;
-    border-radius: 8px;
-}
-
-/* Mise en valeur de la prochaine prière (optionnel) */
-.prayer-row.next {
-    border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-}
-/* --- STYLE WIDGET PRIÈRE --- */
-.mini-prayer-item {
-    background: rgba(255,255,255,0.05);
-    padding: 8px 10px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-}
-.mini-prayer-name { color: #ccc; }
-.mini-prayer-time { color: var(--accent); font-weight: bold; font-family: monospace; }
-
-/* Mise en avant de la prochaine prière */
-.mini-prayer-item.next {
-    border: 1px solid var(--accent);
-    background: rgba(212, 175, 55, 0.1);
-}
+input, select { width: 100%; padding: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #fff; margin-bottom: 10px; font-size: 1rem; }
+#options-container { display: flex; flex-direction: column; gap: 15px; width: 100%; margin-top: 30px; }
+.option-btn { width: 100%; padding: 20px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 15px; color: #fff; font-size: 1.1rem; text-align: left; cursor: pointer; transition: background 0.2s; font-family: var(--font-body); }
+.option-btn.correct { background-color: #27ae60 !important; border-color: #2ecc71 !important; color: white !important; font-weight: bold; }
+.option-btn.wrong { background-color: #c0392b !important; border-color: #e74c3c !important; color: white !important; }
+#question-text { font-family: var(--font-title); font-size: 1.4rem; text-align: center; color: #fff; line-height: 1.5; }
+.score-circle { width: 120px; height: 120px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 2.5rem; font-weight: bold; }
+.audio-player-container { background: var(--glass-bg); border: 1px solid var(--accent); padding: 20px; border-radius: 20px; margin-bottom: 30px; text-align: center; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(20px); }
+.ayah-arabic { font-family: 'Amiri', serif; font-size: 1.8rem; color: #fff; text-align: right; line-height: 2.2; margin-bottom: 15px; direction: rtl; }
+.ayah-french { font-family: var(--font-body); font-size: 1rem; color: var(--text-muted); text-align: left; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.ayah-number { display: inline-block; width: 30px; height: 30px; background: var(--accent); color: #000; border-radius: 50%; font-size: 0.8rem; font-weight: bold; text-align: center; line-height: 30px; margin-left: 10px; }
+.names-grid-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 15px; padding-bottom: 50px; }
+.name-mini-card { background: var(--glass-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 15px 5px; text-align: center; cursor: pointer; }
+.mini-arabic { font-family: 'Amiri', serif; font-size: 1.2rem; color: #fff; }
+.mini-trans { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; }
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
+.flip-card { width: 280px; height: 350px; perspective: 1000px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px solid var(--accent); background: #000; padding: 20px; }
+.flip-card-back { background: var(--accent); color: #000; transform: rotateY(180deg); }
     </style>
 </head>
-<body>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 <div class="animated-background">
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
 </div>
 
 <div id="screen-home" class="screen active fade-in">
-    <div class="logo-area">
+    <div style="margin-top:40px; text-align:center;">
         <div class="logo-circle">✦</div>
-        <h1>Nour</h1>
+        <h1>?</h1>
         <div class="subtitle">Sagesse & Savoir</div>
     </div>
-    
     <div class="daily-card">
         <div class="daily-label">✨ HADITH DU JOUR</div>
         <p id="daily-hadith-text">Chargement...</p>
         <div id="daily-hadith-source" class="daily-source">...</div>
     </div>
-    
     <div style="width: 100%; padding: 0 40px;">
         <button class="btn-enter" onclick="showScreen('screen-dashboard')">ENTRER DANS L'APP</button>
     </div>
-
-    <div class="footer-count">
-        <span id="totalCount">...</span> Hadiths répertoriés
-    </div>
+    <div class="footer-count"><span id="totalCount">...</span> Hadiths répertoriés</div>
 </div>
 
 <div id="screen-dashboard" class="screen">
-    <div class="nav-header">
-        <h2>Accueil</h2>
-        <p>Que souhaitez-vous faire ?</p>
+    <div class="nav-header"><h2>Accueil</h2><p>Que souhaitez-vous faire ?</p></div>
+    
+    <div id="prayer-widget" class="daily-card" style="margin-bottom:20px; text-align:left; display:block !important; padding:15px;">
+        <div id="widget-search-mode">
+            <h3 style="color:var(--accent); font-size:1rem; margin-bottom:10px;">Vos Horaires</h3>
+            <div style="display:flex; gap:5px;">
+                <input type="text" id="widget-city-input" placeholder="Ville..." style="margin:0; flex:1;">
+                <button class="btn-enter" onclick="initPrayerWidget()" style="width:auto; padding:0 15px; margin:0; border-radius:10px;">OK</button>
+                <button class="btn-enter" onclick="initWidgetByGPS()" style="width:auto; padding:0 15px; margin:0; border-radius:10px; background:#27ae60;">📍</button>
+            </div>
+            <p id="widget-loading" style="display:none; color:#aaa; font-size:0.8rem;">Chargement...</p>
+        </div>
+        <div id="widget-display-mode" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <div><h2 id="widget-city-name" style="margin:0; font-size:1.1rem; color:white;">Ville</h2><span id="widget-date" style="font-size:0.7rem; color:#aaa;">Date</span></div>
+                <button onclick="resetCity()" style="background:none; border:none; color:var(--accent);">✎</button>
+            </div>
+            <div id="widget-prayers-list" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;"></div>
+        </div>
     </div>
 
     <div class="dashboard-grid fade-in">
-        
-        <div id="prayer-widget" class="daily-card" style="margin-bottom: 20px; text-align: left; min-height: auto !important; display: block !important;">
-            <div id="widget-search-mode">
-                <h3 style="color:var(--accent); font-size:1rem; margin-bottom:10px;">Vos Horaires</h3>
-                <div style="display: flex; gap: 5px;">
-                    <input type="text" id="widget-city-input" placeholder="Ville..." style="margin:0; padding:10px; font-size:0.9rem; flex:1;">
-                    <button class="btn-enter" onclick="initPrayerWidget()" style="width:auto; padding:0 15px; margin:0; border-radius:10px;">OK</button>
-                    <button class="btn-enter" onclick="initWidgetByGPS()" style="width:auto; padding:0 15px; margin:0; border-radius:10px; background:#27ae60;">📍</button>
-                </div>
-            </div>
-            <div id="widget-display-mode" style="display: none;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                    <h2 id="widget-city-name" style="margin:0; font-size:1.2rem; color:white;">Ville</h2>
-                    <button onclick="resetCity()" style="background:none; border:none; color:var(--accent);">✎</button>
-                </div>
-                <div id="widget-prayers-list" style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;"></div>
-            </div>
-        </div>
-
-        <div class="dash-card" onclick="goToMenu()">
-            <div class="dash-icon">📖</div>
-            <div class="dash-content"><h3>Bibliothèque</h3><p>Accéder aux recueils</p></div>
-            <div class="dash-arrow">→</div>
-        </div>
-
-        <div class="dash-card" onclick="startQuiz()">
-            <div class="dash-icon">🧠</div>
-            <div class="dash-content"><h3>Quiz Éducatif</h3><p>Tester mes connaissances</p></div>
-            <div class="dash-arrow">→</div>
-        </div>
-
-        <div class="dash-card" onclick="openQuran()">
-            <div class="dash-icon">🕌</div>
-            <div class="dash-content"><h3>Le Saint Coran</h3><p>Lire les 114 Sourates</p></div>
-            <div class="dash-arrow">→</div>
-        </div>
-
-        <div class="dash-card" onclick="openFavorites()">
-            <div class="dash-icon">❤️</div>
-            <div class="dash-content"><h3>Favoris</h3><p>Vos coups de cœur</p></div>
-            <div class="dash-arrow">→</div>
-        </div>
-
-        <div class="dash-card" onclick="openNames()">
-            <div class="dash-icon">✨</div>
-            <div class="dash-content"><h3>99 Noms</h3><p>Asma ul Husna</p></div>
-            <div class="dash-arrow">→</div>
-        </div>
-
-        <div class="dash-card" onclick="openBios()">
-            <div class="dash-icon">🎙️</div>
-            <div class="dash-content"><h3>Biographies</h3><p>Histoires & Podcasts</p></div>
-            <div class="dash-arrow">→</div>
-        </div>
-
+        <div class="dash-card" onclick="goToMenu()"><div class="dash-icon">📖</div><div class="dash-content"><h3>Bibliothèque</h3><p>Accéder aux recueils</p></div><div class="dash-arrow">→</div></div>
+        <div class="dash-card" onclick="startQuiz()"><div class="dash-icon">🧠</div><div class="dash-content"><h3>Quiz Éducatif</h3><p>Tester mes connaissances</p></div><div class="dash-arrow">→</div></div>
+        <div class="dash-card" onclick="openQuran()"><div class="dash-icon">🕌</div><div class="dash-content"><h3>Le Saint Coran</h3><p>Lire les 114 Sourates</p></div><div class="dash-arrow">→</div></div>
+        <div class="dash-card" onclick="openFavorites()"><div class="dash-icon">❤️</div><div class="dash-content"><h3>Favoris</h3><p>Vos coups de cœur</p></div><div class="dash-arrow">→</div></div>
+        <div class="dash-card" onclick="openNames()"><div class="dash-icon">✨</div><div class="dash-content"><h3>99 Noms</h3><p>Asma ul Husna</p></div><div class="dash-arrow">→</div></div>
+        <div class="dash-card" onclick="openBios()"><div class="dash-icon">🎙️</div><div class="dash-content"><h3>Biographies</h3><p>Histoires & Podcasts</p></div><div class="dash-arrow">→</div></div>
     </div>
     
-    <div style="text-align:center; padding-bottom: 30px;">
+    <div style="text-align:center; margin-top: auto; padding-bottom: 30px;">
         <button class="btn-back" onclick="showScreen('screen-home')">Retour au début</button>
     </div>
 </div>
 
 <div id="screen-menu" class="screen">
-    <div class="nav-header"><button class="btn-back" onclick="showScreen('screen-dashboard')" style="position: absolute; left: 20px;">❮</button><h2>Sources</h2></div>
+    <div class="nav-header"><button class="btn-back" onclick="showScreen('screen-dashboard')" style="position: absolute; left: 20px;">❮ Accueil</button><h2>Sources</h2></div>
     <div class="dashboard-grid fade-in">
         <div class="menu-card" onclick="goToList('Bukhari')"><div class="menu-icon">📘</div><div class="menu-title">Al-Bukhari</div></div>
         <div class="menu-card" onclick="goToList('Muslim')"><div class="menu-icon">📗</div><div class="menu-title">Muslim</div></div>
@@ -618,49 +165,30 @@ function closeQuranReader() {
 
 <div id="screen-list" class="screen">
     <div class="top-bar"><button class="btn-back" onclick="goToMenu()">✕ Retour</button><div class="list-title">Liste</div><div style="width:50px;"></div></div>
-    <div class="search-area">
-        <input type="text" id="searchInput" placeholder="Rechercher...">
-        <select id="topicFilter">
-            <option value="Tous">Tous les sujets</option><option value="Intention">Intention</option><option value="Comportement">Comportement</option>
-            <option value="Famille">Famille</option><option value="Prière">Prière</option><option value="Charité">Charité</option>
-            <option value="Savoir">Savoir</option><option value="Santé">Santé</option>
-        </select>
-    </div>
+    <div class="search-area"><input type="text" id="searchInput" placeholder="Rechercher..."><select id="topicFilter"><option value="Tous">Tous</option></select></div>
     <div id="hadithListContainer" class="hadith-container fade-in"></div>
-    <div id="pagination-controls" style="text-align: center; padding: 20px 0 50px;"></div>
+    <div id="pagination-controls" style="text-align:center; padding:20px;"></div>
 </div>
 
 <div id="screen-quiz" class="screen">
     <div class="top-bar"><button class="btn-back" onclick="showScreen('screen-dashboard')">✕ Quitter</button><div class="list-title">Quiz</div><div style="width:50px;"></div></div>
     <div class="hadith-container fade-in">
         <div id="quiz-content">
-            <div style="width:100%; height:6px; background:rgba(255,255,255,0.1); border-radius:10px; margin-bottom:30px;"><div id="progress-fill" style="height:100%; background:var(--primary); width:0%;"></div></div>
-            <h3 id="question-text">Chargement...</h3>
-            <div id="options-container"></div>
+            <div style="background:rgba(255,255,255,0.1); height:6px; border-radius:10px; margin-bottom:20px;"><div id="progress-fill" style="height:100%; width:0%; background:var(--primary);"></div></div>
+            <h3 id="question-text">?</h3><div id="options-container"></div>
         </div>
-        <div id="quiz-result" style="display:none; text-align:center;">
-            <div class="score-circle"><span id="score-number"></span></div>
-            <h3>Terminé !</h3><p id="score-message">Bravo !</p>
-            <button class="btn-enter" onclick="startQuiz()">REJOUER</button><br><br>
-            <button class="btn-back" onclick="showScreen('screen-dashboard')">Retour</button>
-        </div>
+        <div id="quiz-result" style="display:none; text-align:center;"><div class="score-circle"><span id="score-number"></span></div><h3>Terminé !</h3><p id="score-message">Bravo !</p><button class="btn-enter" onclick="startQuiz()">REJOUER</button><br><br><button class="btn-back" onclick="showScreen('screen-dashboard')">Retour</button></div>
     </div>
 </div>
 
 <div id="screen-quran" class="screen">
     <div class="top-bar"><button class="btn-back" onclick="closeQuranReader()">✕ Retour</button><div class="list-title">Coran</div><div style="width:50px;"></div></div>
-    <div id="surah-list-view" class="dashboard-grid fade-in" style="padding-bottom:50px;"></div>
-    <div id="surah-reader-view" style="display:none; padding:20px 100px;">
-        <div class="audio-player-container">
-            <h3 id="player-title" style="color:var(--accent);">Sourate...</h3>
-            <audio id="quran-audio" controls style="width:100%; margin-top:10px;"></audio>
-        </div>
-        <div id="quran-text-container" class="fade-in"></div>
-    </div>
+    <div id="surah-list-view" class="dashboard-grid fade-in"></div>
+    <div id="surah-reader-view" style="display:none; padding:20px;"><div class="audio-player-container"><h3 id="player-title" style="color:var(--accent);"></h3><audio id="quran-audio" controls style="width:100%;"></audio></div><div id="quran-text-container" class="fade-in"></div></div>
 </div>
 
 <div id="screen-favorites" class="screen">
-    <div class="top-bar"><button class="btn-back" onclick="showScreen('screen-dashboard')">✕ Retour</button><div class="list-title">Mes Favoris</div><div style="width:50px;"></div></div>
+    <div class="top-bar"><button class="btn-back" onclick="showScreen('screen-dashboard')">✕ Retour</button><div class="list-title">Favoris</div><div style="width:50px;"></div></div>
     <div id="fav-container" class="hadith-container fade-in"></div>
     <div id="no-fav-msg" style="text-align:center; color:#888; margin-top:50px; display:none;">Aucun favori.</div>
 </div>
@@ -668,30 +196,9 @@ function closeQuranReader() {
 <div id="screen-names" class="screen">
     <div class="top-bar"><button class="btn-back" onclick="showScreen('screen-dashboard')">✕ Retour</button><div class="list-title">99 Noms</div><div style="width:50px;"></div></div>
     <div id="names-grid" class="names-grid-container fade-in"></div>
-    <div id="name-modal" class="modal-overlay" onclick="closeNameModal()">
-        <div class="flip-card" onclick="event.stopPropagation(); this.classList.toggle('flipped');">
-            <div class="flip-card-inner">
-                <div class="flip-card-front"><div id="modal-arabic" class="big-arabic">...</div><div id="modal-trans" class="modal-subtitle">...</div><p class="tap-hint">Retourner ↻</p></div>
-                <div class="flip-card-back"><h3>Signification</h3><p id="modal-meaning">...</p></div>
-            </div>
-        </div>
-    </div>
+    <div id="name-modal" class="modal-overlay" onclick="closeNameModal()"><div class="flip-card" onclick="event.stopPropagation(); this.classList.toggle('flipped');"><div class="flip-card-inner"><div class="flip-card-front"><div id="modal-arabic" class="big-arabic">...</div><div id="modal-trans" class="modal-subtitle">...</div><p class="tap-hint">Retourner ↻</p></div><div class="flip-card-back"><h3>Signification</h3><p id="modal-meaning">...</p></div></div></div></div>
 </div>
 
-<div id="screen-bios" class="screen">
-    <div class="top-bar"><button class="btn-back" onclick="closeBioReader()">✕ Retour</button><div class="list-title">Histoires</div><div style="width:50px;"></div></div>
-    <div id="bio-list-view" class="dashboard-grid fade-in" style="padding-bottom:50px;"></div>
-    <div id="bio-reader-view" style="display:none; padding:20px; padding-bottom:100px;">
-        <div class="audio-player-container">
-            <div style="font-size:3rem;">🎙️</div>
-            <h3 id="bio-player-title" style="color:var(--accent);">Titre</h3>
-            <audio id="bio-audio" controls style="width:100%; margin-top:10px;"></audio>
-        </div>
-        <div class="hadith-card fade-in">
-            <div id="bio-text-content" style="font-family:'Lato', sans-serif; line-height:1.8; color:#ddd;"></div>
-        </div>
-    </div>
-</div>
 <div id="screen-bios" class="screen">
         <div class="top-bar">
             <button class="btn-back" onclick="closeBioReader()">✕ Retour</button>
@@ -699,52 +206,23 @@ function closeQuranReader() {
             <div style="width: 50px;"></div>
         </div>
 
-        <div id="bio-list-view" class="dashboard-grid fade-in" style="padding-bottom: 50px;">
-            </div>
+        <div id="bio-list-v3" class="dashboard-grid fade-in" style="padding-bottom: 50px;"></div>
 
-        <div id="bio-reader-view" style="display: none; padding: 20px; padding-bottom: 100px;">
-            
-            <div class="audio-player-container">
-                <div style="font-size: 3rem; margin-bottom: 15px;">🎙️</div>
-                <h3 id="bio-player-title" style="color: var(--accent); margin-bottom: 5px; font-family: 'Cinzel', serif;">Titre</h3>
-                <p style="color: #aaa; font-size: 0.8rem; margin-bottom: 20px;">Écouter le récit</p>
-                <audio id="bio-audio" controls style="width: 100%; border-radius: 30px;"></audio>
-            </div>
-
-            <div class="hadith-card fade-in">
-                <div id="bio-text-content" style="font-family: 'Lato', sans-serif; line-height: 1.8; color: #ddd; font-size: 1rem;">
-                    </div>
+        <div id="bio-reader-v3" style="display: none; padding: 20px; padding-bottom: 100px;">
+            <div class="hadith-card fade-in" style="min-height: 400px;">
+                <h2 id="bio-title-v3" style="color: var(--accent); font-family: 'Cinzel', serif; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px;"></h2>
+                <div id="bio-text-v3" style="font-family: 'Lato', sans-serif; line-height: 1.8; color: #f0f0f0; font-size: 1.1rem; text-align: justify;"></div>
             </div>
         </div>
     </div>
-<div id="screen-bios" class="screen">
-        <div class="top-bar">
-            <button class="btn-back" onclick="closeBioReader()">✕ Retour</button>
-            <div class="list-title">Histoires des Prophètes</div>
-            <div style="width: 50px;"></div>
-        </div>
-
-        <div id="bio-list-view" class="dashboard-grid fade-in" style="padding-bottom: 50px;">
-            </div>
-
-        <div id="bio-reader-view" style="display: none; padding: 20px; padding-bottom: 100px;">
-            
-            <div class="audio-player-container">
-                <div style="font-size: 3rem; margin-bottom: 15px;">🎙️</div>
-                <h3 id="bio-player-title" style="color: var(--accent); margin-bottom: 5px; font-family: 'Cinzel', serif;">Titre</h3>
-                <p style="color: #aaa; font-size: 0.8rem; margin-bottom: 20px;">Écouter le récit</p>
-                <audio id="bio-audio" controls style="width: 100%; border-radius: 30px;"></audio>
-            </div>
-
-            <div class="hadith-card fade-in">
-                <div id="bio-text-content" style="font-family: 'Lato', sans-serif; line-height: 1.8; color: #ddd; font-size: 1rem;">
-                    </div>
-            </div>
-        </div>
-    </div>
+<body>
 
     <script>
-        /* =========================================
+        /* ================================================= */
+        /* ZONE 3 : LE JAVASCRIPT                            */
+        /* Va sur CodePen -> Onglet [JS]                     */
+        /* Copie tout et colle-le JUSTE EN DESSOUS 👇        */
+       /* =========================================
    PARTIE 1 : LA BASE DE DONNÉES (DATA)
    Colle tes 1000 Hadiths ici
    ========================================= */
@@ -1334,341 +812,242 @@ let hadiths = [
     { sujet: "Bête", texte: "La Bête sortira et parlera aux gens.", source: "Coran" },
     { sujet: "Repentir", texte: "Le repentir est accepté tant que le soleil ne se lève pas de l'ouest.", source: "Muslim" },
   ];
-/* =========================================
-   PARTIE 2 : LE MOTEUR DU SITE (LOGIQUE)
-   Ne touche pas à ça, c'est le cerveau !
-   ========================================= */
-
-const itemsPerPage = 10;
-let currentPage = 1;
-let currentSourceFilter = "Tous";
-
-const container = document.getElementById('hadithListContainer');
-const searchInput = document.getElementById('searchInput');
-const topicFilter = document.getElementById('topicFilter');
-
-// Création pagination
-let paginationContainer = document.getElementById('pagination-controls');
-if (!paginationContainer) {
-    paginationContainer = document.createElement('div');
-    paginationContainer.id = 'pagination-controls';
-    paginationContainer.style.textAlign = 'center';
-    paginationContainer.style.padding = '20px 0 50px 0';
-    container.parentNode.appendChild(paginationContainer);
-}
-
-// Navigation écrans
-function showScreen(screenId) {
-    document.querySelectorAll('.screen').forEach(s => {
-        s.classList.remove('active');
-        s.classList.remove('fade-in'); 
-    });
-    const screen = document.getElementById(screenId);
-    screen.classList.add('active');
-    void screen.offsetWidth; 
-    screen.classList.add('fade-in');
-}
-
-function goToMenu() { showScreen('screen-menu'); }
-
-function goToList(sourceKey) {
-    currentSourceFilter = sourceKey;
-    const titleElement = document.getElementById('list-title');
-    if(sourceKey === 'Tous') titleElement.innerText = "Tout le recueil";
-    else if(sourceKey === 'Autre') titleElement.innerText = "Sources Diverses";
-    else titleElement.innerText = "Sahih " + sourceKey;
-    
-    searchInput.value = "";
-    topicFilter.value = "Tous";
-    currentPage = 1; 
-    
-    showScreen('screen-list');
-    filterHadiths(); 
-}
-
-// Affichage
-function displayHadiths(items) {
-    container.innerHTML = "";
-    
-    const totalItems = items.length;
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-    
-    if (currentPage < 1) currentPage = 1;
-    if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
-
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const paginatedItems = items.slice(start, end);
-
-    if(items.length === 0) {
-        container.innerHTML = "<div style='text-align:center; padding:50px; color:#aaa;'>Aucun hadith trouvé.</div>";
-        paginationContainer.innerHTML = "";
-        return;
-    }
-
-    paginatedItems.forEach(hadith => {
-        const card = document.createElement('div');
-        card.className = 'hadith-card';
-        card.innerHTML = `
-            <span class="tag">${hadith.sujet}</span>
-            <div class="hadith-text">« ${hadith.texte} »</div>
-            <div class="hadith-source">— ${hadith.source}</div>
-        `;
-        container.appendChild(card);
-    });
-
-    renderPagination(totalPages);
-}
-
-function renderPagination(totalPages) {
-    paginationContainer.innerHTML = "";
-    if (totalPages <= 1) return;
-
-    const prevBtn = document.createElement('button');
-    prevBtn.innerText = "← Précédent";
-    prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; filterHadiths(); document.getElementById('screen-list').scrollTop = 0; }};
-    prevBtn.style.marginRight = "10px";
-    prevBtn.style.padding = "10px 20px";
-    prevBtn.style.borderRadius = "20px";
-    prevBtn.style.border = "1px solid #ccc";
-    prevBtn.style.background = currentPage === 1 ? "#eee" : "white";
-    prevBtn.style.color = currentPage === 1 ? "#aaa" : "#333";
-    prevBtn.disabled = currentPage === 1;
-
-    const nextBtn = document.createElement('button');
-    nextBtn.innerText = "Suivant →";
-    nextBtn.onclick = () => { if(currentPage < totalPages) { currentPage++; filterHadiths(); document.getElementById('screen-list').scrollTop = 0; }};
-    nextBtn.style.marginLeft = "10px";
-    nextBtn.style.padding = "10px 20px";
-    nextBtn.style.borderRadius = "20px";
-    nextBtn.style.border = "1px solid #ccc";
-    nextBtn.style.background = currentPage === totalPages ? "#eee" : "white";
-    nextBtn.style.color = currentPage === totalPages ? "#aaa" : "#333";
-    nextBtn.disabled = currentPage === totalPages;
-
-    const info = document.createElement('span');
-    info.innerText = `${currentPage} / ${totalPages}`;
-    info.style.color = "#888";
-    info.style.fontWeight = "bold";
-
-    paginationContainer.appendChild(prevBtn);
-    paginationContainer.appendChild(info);
-    paginationContainer.appendChild(nextBtn);
-}
-
-function filterHadiths() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const selectedTopic = topicFilter.value;
-
-    const filtered = hadiths.filter(hadith => {
-        let matchesSourceMenu = true;
-        if (currentSourceFilter !== "Tous") {
-            if (currentSourceFilter === "Autre") {
-                matchesSourceMenu = !hadith.source.includes("Bukhari") && 
-                                    !hadith.source.includes("Muslim") && 
-                                    !hadith.source.includes("Tirmidhi");
-            } else {
-                matchesSourceMenu = hadith.source.includes(currentSourceFilter);
-            }
-        }
-        const matchesTopic = selectedTopic === "Tous" || hadith.sujet === selectedTopic;
-        const matchesSearch = hadith.texte.toLowerCase().includes(searchTerm) || 
-                              hadith.source.toLowerCase().includes(searchTerm);
-
-        return matchesSourceMenu && matchesTopic && matchesSearch;
-    });
-
-    displayHadiths(filtered);
-}
-
-searchInput.addEventListener('input', () => { currentPage = 1; filterHadiths(); });
-topicFilter.addEventListener('change', () => { currentPage = 1; filterHadiths(); });
 
 /* =========================================
-   MISE À JOUR AUTOMATIQUE DU COMPTEUR
+   2. DONNÉES (QUIZ, NOMS, BIO)
    ========================================= */
-setTimeout(function() {
-    // On vérifie si l'élément existe
-    const counter = document.getElementById('totalCount');
-    
-    // Si oui, on remplace le texte par la taille de la liste
-    if (counter && typeof hadiths !== 'undefined') {
-        counter.innerText = hadiths.length;
-    }
-}, 500); // On attend 0.5 seconde pour être sûr
-/* =========================================
-   ROBOT NETTOYEUR DE DOUBLONS 🤖
-   ========================================= */
-// 1. On sauvegarde le nombre avant nettoyage
-const countBefore = hadiths.length;
-
-// 2. On crée une nouvelle liste sans les copies
-const uniqueList = [];
-const seenTexts = new Set();
-
-hadiths.forEach(item => {
-    // On compare les textes (on retire les espaces inutiles)
-    const signature = item.texte.trim().toLowerCase();
-    
-    // Si on n'a jamais vu ce texte, on l'ajoute
-    if (!seenTexts.has(signature)) {
-        seenTexts.add(signature);
-        uniqueList.push(item);
-    }
-});
-
-// 3. On remplace l'ancienne liste par la propre
-hadiths = uniqueList;
-
-// 4. On met à jour le compteur affiché
-const countAfter = hadiths.length;
-console.log("Nettoyage terminé : " + (countBefore - countAfter) + " doublons supprimés.");
-
-// Mise à jour du texte en bas de page
-setTimeout(function() {
-    const counter = document.getElementById('totalCount');
-    if (counter) counter.innerText = hadiths.length;
-}, 500);
-
-/* =========================================
-   GÉNÉRATEUR HADITH DU JOUR 🌞
-   ========================================= */
-setTimeout(function() {
-    if (typeof hadiths !== 'undefined' && hadiths.length > 0) {
-        // On utilise la date d'aujourd'hui pour choisir un numéro
-        const today = new Date();
-        // Astuce mathématique pour avoir un chiffre unique par jour
-        const dateIndex = today.getFullYear() * 1000 + (today.getMonth() + 1) * 30 + today.getDate();
-        
-        // On prend ce chiffre modulo le nombre total de hadiths
-        // Ça nous donne un hadith différent chaque jour, qui tourne en boucle
-        const dailyIndex = dateIndex % hadiths.length;
-        const dailyHadith = hadiths[dailyIndex];
-
-        // On l'affiche
-        document.getElementById('daily-hadith-text').innerText = "« " + dailyHadith.texte + " »";
-        document.getElementById('daily-hadith-source').innerText = "— " + dailyHadith.source;
-    }
-}, 500);
-
-/* =========================================
-   ZONE QUIZ (DONNÉES + MOTEUR) - CODE PROPRE
-   ========================================= */
-
-// 1. LA LISTE DES QUESTIONS (20 questions pour tester)
 const quizData = [
     { question: "Combien y a-t-il de piliers en Islam ?", options: ["3", "5", "6", "99"], correct: 1 },
-    { question: "Quelle sourate équivaut à un tiers du Coran ?", options: ["Al-Fatiha", "Al-Ikhlas", "Al-Falaq", "An-Nas"], correct: 1 },
-    { question: "Quelle prière marque le milieu de la journée ?", options: ["Fajr", "Dohr", "Asr", "Maghrib"], correct: 1 },
-    { question: "Quel prophète a fendu la mer ?", options: ["Moussa", "Ibrahim", "Nouh", "Issa"], correct: 0 },
-    { question: "Que signifie le mot Islam ?", options: ["Guerre", "Soumission", "Liberté", "Sagesse"], correct: 1 },
-    { question: "Qui fut le premier Calife ?", options: ["Omar", "Ali", "Abou Bakr", "Othman"], correct: 2 },
-    { question: "Quel livre fut révélé à Daoud ?", options: ["Thora", "Évangile", "Zabour", "Coran"], correct: 2 },
-    { question: "Où est né le Prophète (sws) ?", options: ["Médine", "Jérusalem", "La Mecque", "Taif"], correct: 2 },
-    { question: "Quel mois suit le Ramadan ?", options: ["Chaabane", "Chawwal", "Mouharram", "Safar"], correct: 1 },
-    { question: "Quel ange soufflera dans la Trompe ?", options: ["Jibril", "Mikail", "Israfil", "Malik"], correct: 2 },
-    { question: "La nuit meilleure que 1000 mois ?", options: ["Ascension", "Destin", "Doute", "Aïd"], correct: 1 },
-    { question: "Que dire avant de manger ?", options: ["Alhamdulillah", "Bismillah", "Allahu Akbar", "Amine"], correct: 1 },
-    { question: "Quel prophète a parlé au berceau ?", options: ["Moussa", "Issa", "Yahya", "Ismail"], correct: 1 },
-    { question: "La plus courte sourate ?", options: ["Al-Asr", "Al-Kawthar", "An-Nasr", "Al-Ikhlas"], correct: 1 },
-    { question: "Qui est le 'Lion d'Allah' ?", options: ["Khalid ibn Walid", "Hamza", "Omar", "Ali"], correct: 1 },
-    { question: "Vers où prie-t-on ?", options: ["Est", "Jérusalem", "Kaaba", "Ciel"], correct: 2 },
-    { question: "Premier muezzin de l'Islam ?", options: ["Zayd", "Bilal", "Abdullah", "Salman"], correct: 1 },
-    { question: "Combien de sourates dans le Coran ?", options: ["110", "112", "114", "120"], correct: 2 },
-    { question: "La prière du voyageur comporte combien de raka'at ?", options: ["1", "2", "3", "4"], correct: 1 },
-    { question: "Quel prophète a construit l'Arche ?", options: ["Ibrahim", "Nouh", "Moussa", "Adam"], correct: 1 }
+    { question: "Quelle sourate équivaut à un tiers du Coran ?", options: ["Al-Fatiha", "Al-Ikhlas", "Al-Falaq", "An-Nas"], correct: 1 }
 ];
 
-// 2. LES VARIABLES DU JEU
-// (Attention à ne pas les avoir déclarées plus haut dans ton fichier !)
-let currentQuestionIndex = 0;
-let score = 0;
-let isAnswering = false;
-let currentQuizQuestions = [];
+const namesOfAllah = [
+    { arabic: "الله", trans: "Allah", meaning: "Dieu (Celui qui est adoré)" },
+    { arabic: "الرَّحْمَن", trans: "Ar-Rahman", meaning: "Le Tout-Miséricordieux" },
+    { arabic: "الرَّحِيم", trans: "Ar-Rahim", meaning: "Le Très-Miséricordieux" },
+    { arabic: "الْمَلِك", trans: "Al-Malik", meaning: "Le Souverain / Le Roi" },
+    { arabic: "الْقُدُّوس", trans: "Al-Quddus", meaning: "Le Pur / Le Saint" },
+    { arabic: "السَّلَام", trans: "As-Salam", meaning: "La Paix / La Sécurité" },
+    { arabic: "الْمُؤْمِن", trans: "Al-Mu'min", meaning: "Le Rassurant / Le Fidèle" },
+    { arabic: "الْمُهَيْمِن", trans: "Al-Muhaymin", meaning: "Le Prédominant / Le Protecteur" },
+    { arabic: "الْعَزِيز", trans: "Al-Aziz", meaning: "Le Tout-Puissant" },
+    { arabic: "الْجَبَّار", trans: "Al-Jabbar", meaning: "Le Contraignant" },
+    { arabic: "الْمُتَكَبِّر", trans: "Al-Mutakabbir", meaning: "Le Superbe / Le Majestueux" },
+    { arabic: "الْخَالِق", trans: "Al-Khaliq", meaning: "Le Créateur" },
+    { arabic: "الْبَارِئ", trans: "Al-Bari", meaning: "Le Producteur" },
+    { arabic: "الْمُصَوِّر", trans: "Al-Musawwir", meaning: "Le Façonneur" },
+    { arabic: "الْغَفَّار", trans: "Al-Ghaffar", meaning: "Le Grand Pardonneur" },
+    { arabic: "الْقَهَّار", trans: "Al-Qahhar", meaning: "Le Tout-Dominateur" },
+    { arabic: "الْوَهَّاب", trans: "Al-Wahhab", meaning: "Le Donateur gracieux" },
+    { arabic: "الرَّزَّاق", trans: "Ar-Razzaq", meaning: "Le Pourvoyeur" },
+    { arabic: "الْفَتَّاح", trans: "Al-Fattah", meaning: "Celui qui accorde la victoire" },
+    { arabic: "الْعَلِيم", trans: "Al-'Alim", meaning: "L'Omniscient" },
+    { arabic: "الْقَابِض", trans: "Al-Qabid", meaning: "Celui qui retient" },
+    { arabic: "الْبَاسِط", trans: "Al-Basit", meaning: "Celui qui étend" },
+    { arabic: "الْخَافِض", trans: "Al-Khafid", meaning: "Celui qui abaisse" },
+    { arabic: "الرَّافِع", trans: "Ar-Rafi'", meaning: "Celui qui élève" },
+    { arabic: "الْمُعِزّ", trans: "Al-Mu'izz", meaning: "Celui qui donne la puissance" },
+    { arabic: "الْمُذِلّ", trans: "Al-Mudhill", meaning: "Celui qui humilie" },
+    { arabic: "السَّمِيع", trans: "As-Sami'", meaning: "L'Audient" },
+    { arabic: "الْبَصِير", trans: "Al-Basir", meaning: "Le Voyant" },
+    { arabic: "الْحَكَم", trans: "Al-Hakam", meaning: "Le Juge / L'Arbitre" },
+    { arabic: "الْعَدْل", trans: "Al-'Adl", meaning: "Le Juste" },
+    { arabic: "اللَّطِيف", trans: "Al-Latif", meaning: "Le Doux / Le Subtil" },
+    { arabic: "الْخَبِير", trans: "Al-Khabir", meaning: "Le Bien-Informé" },
+    { arabic: "الْحَلِيم", trans: "Al-Halim", meaning: "Le Clément" },
+    { arabic: "الْعَظِيم", trans: "Al-'Azim", meaning: "L'Immense" },
+    { arabic: "الْغَفُور", trans: "Al-Ghafur", meaning: "Le Pardonneur" },
+    { arabic: "الشَّكُور", trans: "Ash-Shakur", meaning: "Le Reconnaissant" },
+    { arabic: "الْعَلِيّ", trans: "Al-'Ali", meaning: "Le Très-Haut" },
+    { arabic: "الْكَبِير", trans: "Al-Kabir", meaning: "Le Très-Grand" },
+    { arabic: "الْحَفِيظ", trans: "Al-Hafiz", meaning: "Le Gardien" },
+    { arabic: "الْمُقِيت", trans: "Al-Muqit", meaning: "Le Nourricier" },
+    { arabic: "الْحَسِيب", trans: "Al-Hasib", meaning: "Celui qui tient les comptes" },
+    { arabic: "الْجَلِيل", trans: "Al-Jalil", meaning: "Le Majestueux" },
+    { arabic: "الْكَرِيم", trans: "Al-Karim", meaning: "Le Généreux" },
+    { arabic: "الرَّقِيب", trans: "Ar-Raqib", meaning: "L'Observateur" },
+    { arabic: "الْمُجِيب", trans: "Al-Mujib", meaning: "Celui qui exauce" },
+    { arabic: "الْوَاسِع", trans: "Al-Wasi'", meaning: "Le Vaste" },
+    { arabic: "الْحَكِيم", trans: "Al-Hakim", meaning: "Le Sage" },
+    { arabic: "الْوَدُود", trans: "Al-Wadud", meaning: "Le Tout-Affectueux" },
+    { arabic: "الْمَجِيد", trans: "Al-Majid", meaning: "Le Très-Glorieux" },
+    { arabic: "الْبَاعِث", trans: "Al-Ba'ith", meaning: "Celui qui ressuscite" },
+    { arabic: "الشَّهِيد", trans: "Ash-Shahid", meaning: "Le Témoin" },
+    { arabic: "الْحَقّ", trans: "Al-Haqq", meaning: "Le Vrai" },
+    { arabic: "الْوَكِيل", trans: "Al-Wakil", meaning: "Le Garant" },
+    { arabic: "الْقَوِيّ", trans: "Al-Qawiyy", meaning: "Le Fort" },
+    { arabic: "الْمَتِين", trans: "Al-Matin", meaning: "Le Robuste" },
+    { arabic: "الْوَلِيّ", trans: "Al-Waliyy", meaning: "Le Protecteur" },
+    { arabic: "الْحَمِيد", trans: "Al-Hamid", meaning: "Le Digne de louange" },
+    { arabic: "الْمُحْصِي", trans: "Al-Muhsi", meaning: "Celui qui dénombre" },
+    { arabic: "الْمُبْدِئ", trans: "Al-Mubdi", meaning: "L'Auteur" },
+    { arabic: "الْمُعِيد", trans: "Al-Mu'id", meaning: "Celui qui recrée" },
+    { arabic: "الْمُحْيِي", trans: "Al-Muhyi", meaning: "Celui qui donne la vie" },
+    { arabic: "الْمُمِيت", trans: "Al-Mumit", meaning: "Celui qui donne la mort" },
+    { arabic: "الْحَيّ", trans: "Al-Hayy", meaning: "Le Vivant" },
+    { arabic: "الْقَيُّوم", trans: "Al-Qayyum", meaning: "Le Subsistant par lui-même" },
+    { arabic: "الْوَاجِد", trans: "Al-Wajid", meaning: "L'Opulent" },
+    { arabic: "الْمَاجِد", trans: "Al-Majid", meaning: "Le Noble" },
+    { arabic: "الْوَاحِد", trans: "Al-Wahid", meaning: "L'Unique" },
+    { arabic: "الصَّمَد", trans: "As-Samad", meaning: "Le Soutien universel" },
+    { arabic: "الْقَادِر", trans: "Al-Qadir", meaning: "Le Puissant" },
+    { arabic: "الْمُقْتَدِر", trans: "Al-Muqtadir", meaning: "Le Détenteur du pouvoir" },
+    { arabic: "الْمُقَدِّم", trans: "Al-Muqaddim", meaning: "Celui qui fait avancer" },
+    { arabic: "الْمُؤَخِّر", trans: "Al-Mu'akhkhir", meaning: "Celui qui retarde" },
+    { arabic: "الْأَوَّل", trans: "Al-Awwal", meaning: "Le Premier" },
+    { arabic: "الْآخِر", trans: "Al-Akhir", meaning: "Le Dernier" },
+    { arabic: "الظَّاهِر", trans: "Az-Zahir", meaning: "L'Apparent" },
+    { arabic: "الْبَاطِن", trans: "Al-Batin", meaning: "Le Caché" },
+    { arabic: "الْوَالِي", trans: "Al-Wali", meaning: "Le Maître" },
+    { arabic: "الْمُتَعَالِي", trans: "Al-Muta'ali", meaning: "Le Sublime" },
+    { arabic: "الْبَرّ", trans: "Al-Barr", meaning: "Le Bienfaisant" },
+    { arabic: "التَّوَّاب", trans: "At-Tawwab", meaning: "Celui qui accueille le repentir" },
+    { arabic: "الْمُنْتَقِم", trans: "Al-Muntaqim", meaning: "Le Vengeur" },
+    { arabic: "الْعَفُوّ", trans: "Al-'Afuww", meaning: "L'Indulgent" },
+    { arabic: "الرَّؤُوف", trans: "Ar-Ra'uf", meaning: "Le Bienveillant" },
+    { arabic: "مَالِكُ الْمُلْك", trans: "Malik-ul-Mulk", meaning: "Le Maître du Royaume" },
+    { arabic: "ذُو الْجَلَالِ وَالْإِكْرَام", trans: "Dhul-Jalal wal-Ikram", meaning: "Le Détenteur de la Majesté" },
+    { arabic: "الْمُقْسِط", trans: "Al-Muqsit", meaning: "L'Équitable" },
+    { arabic: "الْجَامِع", trans: "Al-Jami'", meaning: "Le Rassembleur" },
+    { arabic: "الْغَنِيّ", trans: "Al-Ghaniyy", meaning: "Le Riche" },
+    { arabic: "الْمُغْنِي", trans: "Al-Mughni", meaning: "Celui qui enrichit" },
+    { arabic: "الْمَانِع", trans: "Al-Mani'", meaning: "Le Défenseur" },
+    { arabic: "الضَّار", trans: "Ad-Darr", meaning: "Celui qui peut nuire" },
+    { arabic: "النَّافِع", trans: "An-Nafi'", meaning: "L'Utile" },
+    { arabic: "النُّور", trans: "An-Nur", meaning: "La Lumière" },
+    { arabic: "الْهَادِي", trans: "Al-Hadi", meaning: "Le Guide" },
+    { arabic: "الْبَدِيع", trans: "Al-Badi'", meaning: "L'Inventeur" },
+    { arabic: "الْبَاقِي", trans: "Al-Baqi", meaning: "Le Permanent" },
+    { arabic: "الْوَارِث", trans: "Al-Warith", meaning: "L'Héritier" },
+    { arabic: "الرَّشِيد", trans: "Ar-Rashid", meaning: "Le Droit" },
+    { arabic: "الصَّبُور", trans: "As-Sabur", meaning: "Le Patient" }
+];
 
-// 3. LA FONCTION DE DÉMARRAGE
-window.startQuiz = function() {
-    currentQuestionIndex = 0;
-    score = 0;
-    
-    // MÉLANGE ET SÉLECTIONNE 10 QUESTIONS
-    // .slice(0, 10) veut dire : prends les 10 premières après mélange
-    let shuffled = [...quizData].sort(() => 0.5 - Math.random());
-    currentQuizQuestions = shuffled.slice(0, 5);
-    
-    showScreen('screen-quiz');
-    document.getElementById('quiz-content').style.display = 'block';
-    document.getElementById('quiz-result').style.display = 'none';
-    
-    loadQuestion();
-};
+/* =========================================
+   MODULE BIOGRAPHIES (V3 - IDs UNIQUES) 🛠️
+   ========================================= */
 
-// 4. CHARGEMENT D'UNE QUESTION
-function loadQuestion() {
-    isAnswering = false;
-    const q = currentQuizQuestions[currentQuestionIndex];
-    const total = currentQuizQuestions.length;
-    
-    // Barre de progression
-    const progress = ((currentQuestionIndex) / total) * 100;
-    document.getElementById('progress-fill').style.width = progress + "%";
-    
-    // Texte
-    document.getElementById('question-text').innerText = q.question;
-    
-    // Boutons
-    const optionsDiv = document.getElementById('options-container');
-    optionsDiv.innerHTML = "";
-    
-    q.options.forEach((opt, index) => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(index, btn);
-        optionsDiv.appendChild(btn);
-    });
-}
-
-// 5. VÉRIFICATION RÉPONSE
-function checkAnswer(selectedIndex, btnElement) {
-    if (isAnswering) return;
-    isAnswering = true;
-    
-    const correctIndex = currentQuizQuestions[currentQuestionIndex].correct;
-    
-    if (selectedIndex === correctIndex) {
-        btnElement.classList.add('correct');
-        score++;
-    } else {
-        btnElement.classList.add('wrong');
-        const allBtns = document.querySelectorAll('.option-btn');
-        allBtns[correctIndex].classList.add('correct');
+const bioData = [
+    {
+        title: "Adam (Alayhi Salam)",
+        desc: "Le premier homme.",
+        text: `<strong style="color:var(--accent)">La Création</strong><br><br>Allah a créé Adam à partir de terre. Il a ordonné aux Anges de se prosterner devant lui par respect. Iblis refusa par orgueil.<br><br>Adam et Hawwa (Ève) vivaient au Paradis jusqu'à l'épreuve de l'arbre interdit. Ils se repentirent sincèrement. C'est le début de l'histoire de l'humanité sur Terre.`
+    },
+    {
+        title: "Nuh (Noé) (Alayhi Salam)",
+        desc: "La patience et l'Arche.",
+        text: `<strong style="color:var(--accent)">Le Déluge</strong><br><br>Nuh a prêché pendant 950 ans. Face au refus de son peuple, Allah lui ordonna de construire une arche en plein désert.<br><br>Quand l'eau jaillit de la terre et tomba du ciel, seuls les croyants furent sauvés.`
+    },
+    {
+        title: "Ibrahim (Abraham) (AS)",
+        desc: "L'ami intime d'Allah.",
+        text: `<strong style="color:var(--accent)">Le Feu</strong><br><br>Jeté dans un feu immense pour sa foi, Ibrahim plaça sa confiance en Allah qui rendit le feu "fraîcheur et paix".`
+    },
+    {
+        title: "Moussa (Moïse) (AS)",
+        desc: "Face à Pharaon.",
+        text: `<strong style="color:var(--accent)">La Mer Rouge</strong><br><br>Moussa a défié le tyran Pharaon. Devant la mer bloquée, il frappa l'eau de son bâton et Allah ouvrit un chemin sec pour sauver les croyants.`
+    },
+    {
+        title: "Issa (Jésus) (AS)",
+        desc: "Le souffle de l'Esprit.",
+        text: `<strong style="color:var(--accent)">Le Miracle</strong><br><br>Né sans père par un miracle d'Allah, Issa a parlé au berceau pour défendre l'honneur de sa mère Maryam.`
+    },
+    {
+        title: "Muhammad (Saws)",
+        desc: "Le Sceau des Prophètes.",
+        text: `<strong style="color:var(--accent)">La Miséricorde</strong><br><br>Le dernier Messager, envoyé à l'humanité entière. Il a transformé le monde par son comportement exemplaire, sa justice et sa douceur.`
     }
+];
+
+function openBios() {
+    showScreen('screen-bios');
     
-    setTimeout(() => {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < currentQuizQuestions.length) {
-            loadQuestion();
-        } else {
-            showResults();
-        }
-    }, 1500);
+    const listContainer = document.getElementById('bio-list-v3');
+    const readerContainer = document.getElementById('bio-reader-v3');
+    
+    // Reset affichage
+    listContainer.style.display = 'grid';
+    readerContainer.style.display = 'none';
+
+    // On remplit la liste (seulement si vide)
+    if(listContainer.innerHTML === "") {
+        bioData.forEach(bio => {
+            const card = document.createElement('div');
+            card.className = 'dash-card';
+            card.style.marginBottom = '0';
+            
+            card.innerHTML = `
+                <div class="dash-icon" style="font-size: 1.5rem; width: 50px; height: 50px;">📜</div>
+                <div class="dash-content">
+                    <h3 style="font-size: 1rem; color: #fff;">${bio.title}</h3>
+                    <p style="font-size: 0.8rem;">${bio.desc}</p>
+                </div>
+                <div class="dash-arrow">→</div>
+            `;
+            
+            // Clic -> Ouvre le lecteur V3
+            card.onclick = () => {
+                listContainer.style.display = 'none';
+                readerContainer.style.display = 'block';
+                
+                document.getElementById('bio-title-v3').innerText = bio.title;
+                document.getElementById('bio-text-v3').innerHTML = bio.text;
+                
+                document.getElementById('screen-bios').scrollTop = 0;
+            };
+            
+            listContainer.appendChild(card);
+        });
+    }
 }
 
-// 6. RÉSULTATS
-function showResults() {
-    document.getElementById('quiz-content').style.display = 'none';
-    const resultDiv = document.getElementById('quiz-result');
-    resultDiv.style.display = 'block';
-    
-    // Ajoute les guillemets avec la barre au milieu
-document.getElementById('score-number').innerText = score + " / " + currentQuizQuestions.length;
-    
-    const msg = document.getElementById('score-message');
-    if (score === currentQuizQuestions.length) msg.innerText = "Parfait ! Ma shaa Allah 🏆";
-    else if (score >= (currentQuizQuestions.length / 2)) msg.innerText = "Bravo ! Belle performance 👏";
-    else msg.innerText = "Courage ! Réessaie pour apprendre 💪";
+function closeBioReader() {
+    const reader = document.getElementById('bio-reader-v3');
+    if (reader.style.display === 'block') {
+        reader.style.display = 'none';
+        document.getElementById('bio-list-v3').style.display = 'grid';
+    } else {
+        showScreen('screen-dashboard');
+    }
 }
+
+// AFFICHER LA LECTURE (INJECTION DU TEXTE)
+function renderBioReader(bio) {
+    isReadingBio = true;
+    const area = document.getElementById('bios-content-area');
+    
+    // On change le style pour la lecture
+    area.className = "hadith-container fade-in";
+    area.style.display = "block";
+    
+    // ON ÉCRIT LE TEXTE DIRECTEMENT ICI (Impossible que ça rate)
+    area.innerHTML = `
+        <div class="hadith-card" style="min-height: 400px;">
+            <h2 style="color: var(--accent); font-family: 'Cinzel', serif; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px;">
+                ${bio.title}
+            </h2>
+            <div style="font-family: 'Lato', sans-serif; line-height: 1.8; color: #f0f0f0; font-size: 1.1rem; text-align: justify;">
+                ${bio.text}
+            </div>
+        </div>
+    `;
+    
+    // Remonte en haut
+    document.getElementById('screen-bios').scrollTop = 0;
+}
+
+// BOUTON RETOUR INTELLIGENT
+function handleBioBack() {
+    if (isReadingBio) {
+        // Si on lit, on revient à la liste
+        renderBioList();
+    } else {
+        // Si on est sur la liste, on rentre à l'accueil
+        showScreen('screen-dashboard');
+    }
+}
+
 /* =========================================
    MODULE CORAN (CORRIGÉ & ROBUSTE) 🕌
    ========================================= */
@@ -1786,509 +1165,129 @@ function closeQuranReader() {
         showScreen('screen-dashboard');
     }
 }
-/* =========================================
-   MODULE FAVORIS ❤️ (AJOUTÉ)
-   ========================================= */
 
-// 1. On charge les favoris depuis la mémoire du téléphone
+/* =========================================
+   3. MOTEUR NAVIGATION & HADITHS
+   ========================================= */
+const itemsPerPage = 10;
+let currentPage = 1;
+let currentSourceFilter = "Tous";
 let favorites = JSON.parse(localStorage.getItem('nourFavorites')) || [];
 
-// 2. Fonction pour ouvrir l'écran Favoris
-function openFavorites() {
-    showScreen('screen-favorites');
-    const container = document.getElementById('fav-container');
-    container.innerHTML = "";
-    
-    if (favorites.length === 0) {
-        document.getElementById('no-fav-msg').style.display = "block";
-    } else {
-        document.getElementById('no-fav-msg').style.display = "none";
-        // On affiche chaque favori
-        favorites.forEach(h => {
-            const card = document.createElement('div');
-            card.className = 'hadith-card';
-            card.innerHTML = `
-                <div class="hadith-header">
-                    <span class="tag">${h.sujet}</span>
-                    <button class="btn-fav active" onclick="toggleFav(this, '${h.texte.replace(/'/g, "\\'")}', '${h.source.replace(/'/g, "\\'")}', '${h.sujet.replace(/'/g, "\\'")}')">♥</button>
-                </div>
-                <div class="hadith-text">« ${h.texte} »</div>
-                <div class="hadith-source">— ${h.source}</div>
-            `;
-            container.appendChild(card);
-        });
+function showScreen(screenId) {
+    document.querySelectorAll('.screen').forEach(s => { 
+        s.classList.remove('active'); 
+        s.classList.remove('fade-in'); 
+    });
+    const screen = document.getElementById(screenId);
+    if(screen) {
+        screen.classList.add('active');
+        void screen.offsetWidth; 
+        screen.classList.add('fade-in');
     }
 }
 
-// 3. Fonction pour Ajouter/Retirer un favori
-function toggleFav(btn, texte, source, sujet) {
-    // Vérifie si déjà favori
-    const index = favorites.findIndex(f => f.texte === texte);
-    
-    if (index === -1) {
-        // AJOUTER
-        favorites.push({ texte, source, sujet });
-        btn.classList.add('active');
-        // Animation vibration (si mobile)
-        if(navigator.vibrate) navigator.vibrate(50);
-    } else {
-        // RETIRER
-        favorites.splice(index, 1);
-        btn.classList.remove('active');
-        
-        // Si on est sur l'écran favoris, on retire la carte visuellement
-        if(document.getElementById('screen-favorites').classList.contains('active')) {
-            openFavorites(); // Rafraîchir la liste
-        }
-    }
-    
-    // Sauvegarde dans le téléphone
-    localStorage.setItem('nourFavorites', JSON.stringify(favorites));
-}
+function goToMenu() { showScreen('screen-menu'); }
 
-// ============================================================
-// ⚠️ IMPORTANT : REMPLACE L'ANCIENNE FONCTION displayHadiths
-// PAR CELLE-CI POUR AFFICHER LES CŒURS DANS LA LISTE PRINCIPALE
-// ============================================================
+function goToList(sourceKey) {
+    currentSourceFilter = sourceKey;
+    document.getElementById('searchInput').value = "";
+    document.getElementById('topicFilter').value = "Tous";
+    currentPage = 1;
+    showScreen('screen-list');
+    filterHadiths();
+}
 
 function displayHadiths(items) {
     const container = document.getElementById('hadithListContainer');
     container.innerHTML = "";
-    
     const totalPages = Math.ceil(items.length / itemsPerPage);
     if(currentPage < 1) currentPage = 1;
     if(currentPage > totalPages && totalPages > 0) currentPage = totalPages;
-    
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
     const paginatedItems = items.slice(start, end);
 
+    if(items.length === 0) container.innerHTML = "<p style='text-align:center; color:#888; margin-top:50px;'>Aucun résultat.</p>";
+
     paginatedItems.forEach(h => {
-        // On vérifie si ce hadith est déjà dans les favoris pour allumer le cœur
         const isFav = favorites.some(f => f.texte === h.texte);
-        const activeClass = isFav ? 'active' : '';
-
-        const card = document.createElement('div'); 
-        card.className = 'hadith-card';
-        // Note : j'utilise .replace pour gérer les apostrophes dans le texte
-        card.innerHTML = `
-            <div class="hadith-header">
-                <span class="tag">${h.sujet}</span>
-                <button class="btn-fav ${activeClass}" onclick="toggleFav(this, '${h.texte.replace(/'/g, "\\'")}', '${h.source.replace(/'/g, "\\'")}', '${h.sujet.replace(/'/g, "\\'")}')">♥</button>
-            </div>
-            <div class="hadith-text">« ${h.texte} »</div>
-            <div class="hadith-source">— ${h.source}</div>
-        `;
+        const card = document.createElement('div'); card.className = 'hadith-card';
+        card.innerHTML = `<div class="hadith-header"><span class="tag">${h.sujet}</span><button class="btn-fav ${isFav?'active':''}" onclick="toggleFav(this, '${h.texte.replace(/'/g,"\\'")}','${h.source.replace(/'/g,"\\'")}','${h.sujet.replace(/'/g,"\\'")}'), event">♥</button></div><div class="hadith-text">« ${h.texte} »</div><div class="hadith-source">— ${h.source}</div>`;
         container.appendChild(card);
     });
     
-    // Pagination (Reste identique mais je la remets pour être sûr)
-    const pCont = document.getElementById('pagination-controls');
-    pCont.innerHTML = "";
+    const pCont = document.getElementById('pagination-controls'); pCont.innerHTML = "";
     if (totalPages > 1) {
-        const prev = document.createElement('button'); prev.className='btn-back'; prev.style.fontSize='0.9rem'; prev.innerText="← Précédent";
-        prev.onclick = () => { if(currentPage>1) { currentPage--; filterHadiths(); document.getElementById('screen-list').scrollTop=0; }};
-        const next = document.createElement('button'); next.className='btn-back'; next.style.fontSize='0.9rem'; next.innerText="Suivant →";
-        next.onclick = () => { if(currentPage<totalPages) { currentPage++; filterHadiths(); document.getElementById('screen-list').scrollTop=0; }};
-        const info = document.createElement('span'); info.innerText = currentPage + " / " + totalPages; info.style.color="white"; info.style.margin="0 15px";
-        pCont.appendChild(prev); pCont.appendChild(info); pCont.appendChild(next);
-    }
-}
-/* =========================================
-   MODULE 99 NOMS (GRID & 3D) ✨
-   ========================================= */
-
-// Données (Exemple : les 12 premiers)
-const namesOfAllah = [
-    { arabic: "الله", trans: "Allah", meaning: "Dieu (Celui qui est adoré)" },
-    { arabic: "الرَّحْمَن", trans: "Ar-Rahman", meaning: "Le Tout-Miséricordieux" },
-    { arabic: "الرَّحِيم", trans: "Ar-Rahim", meaning: "Le Très-Miséricordieux" },
-    { arabic: "الْمَلِك", trans: "Al-Malik", meaning: "Le Souverain / Le Roi" },
-    { arabic: "الْقُدُّوس", trans: "Al-Quddus", meaning: "Le Pur / Le Saint" },
-    { arabic: "السَّلَام", trans: "As-Salam", meaning: "La Paix / La Sécurité" },
-    { arabic: "الْمُؤْمِن", trans: "Al-Mu'min", meaning: "Le Rassurant / Le Fidèle" },
-    { arabic: "الْمُهَيْمِن", trans: "Al-Muhaymin", meaning: "Le Prédominant / Le Protecteur" },
-    { arabic: "الْعَزِيز", trans: "Al-Aziz", meaning: "Le Tout-Puissant" },
-    { arabic: "الْجَبَّار", trans: "Al-Jabbar", meaning: "Le Contraignant" },
-    { arabic: "الْمُتَكَبِّر", trans: "Al-Mutakabbir", meaning: "Le Superbe / Le Majestueux" },
-    { arabic: "الْخَالِق", trans: "Al-Khaliq", meaning: "Le Créateur" },
-    { arabic: "الْبَارِئ", trans: "Al-Bari", meaning: "Le Producteur" },
-    { arabic: "الْمُصَوِّر", trans: "Al-Musawwir", meaning: "Le Façonneur" },
-    { arabic: "الْغَفَّار", trans: "Al-Ghaffar", meaning: "Le Grand Pardonneur" },
-    { arabic: "الْقَهَّار", trans: "Al-Qahhar", meaning: "Le Tout-Dominateur" },
-    { arabic: "الْوَهَّاب", trans: "Al-Wahhab", meaning: "Le Donateur gracieux" },
-    { arabic: "الرَّزَّاق", trans: "Ar-Razzaq", meaning: "Le Pourvoyeur" },
-    { arabic: "الْفَتَّاح", trans: "Al-Fattah", meaning: "Celui qui accorde la victoire" },
-    { arabic: "الْعَلِيم", trans: "Al-'Alim", meaning: "L'Omniscient" },
-    { arabic: "الْقَابِض", trans: "Al-Qabid", meaning: "Celui qui retient" },
-    { arabic: "الْبَاسِط", trans: "Al-Basit", meaning: "Celui qui étend" },
-    { arabic: "الْخَافِض", trans: "Al-Khafid", meaning: "Celui qui abaisse" },
-    { arabic: "الرَّافِع", trans: "Ar-Rafi'", meaning: "Celui qui élève" },
-    { arabic: "الْمُعِزّ", trans: "Al-Mu'izz", meaning: "Celui qui donne la puissance" },
-    { arabic: "الْمُذِلّ", trans: "Al-Mudhill", meaning: "Celui qui humilie" },
-    { arabic: "السَّمِيع", trans: "As-Sami'", meaning: "L'Audient" },
-    { arabic: "الْبَصِير", trans: "Al-Basir", meaning: "Le Voyant" },
-    { arabic: "الْحَكَم", trans: "Al-Hakam", meaning: "Le Juge / L'Arbitre" },
-    { arabic: "الْعَدْل", trans: "Al-'Adl", meaning: "Le Juste" },
-    { arabic: "اللَّطِيف", trans: "Al-Latif", meaning: "Le Doux / Le Subtil" },
-    { arabic: "الْخَبِير", trans: "Al-Khabir", meaning: "Le Bien-Informé" },
-    { arabic: "الْحَلِيم", trans: "Al-Halim", meaning: "Le Clément" },
-    { arabic: "الْعَظِيم", trans: "Al-'Azim", meaning: "L'Immense" },
-    { arabic: "الْغَفُور", trans: "Al-Ghafur", meaning: "Le Pardonneur" },
-    { arabic: "الشَّكُور", trans: "Ash-Shakur", meaning: "Le Reconnaissant" },
-    { arabic: "الْعَلِيّ", trans: "Al-'Ali", meaning: "Le Très-Haut" },
-    { arabic: "الْكَبِير", trans: "Al-Kabir", meaning: "Le Très-Grand" },
-    { arabic: "الْحَفِيظ", trans: "Al-Hafiz", meaning: "Le Gardien" },
-    { arabic: "الْمُقِيت", trans: "Al-Muqit", meaning: "Le Nourricier" },
-    { arabic: "الْحَسِيب", trans: "Al-Hasib", meaning: "Celui qui tient les comptes" },
-    { arabic: "الْجَلِيل", trans: "Al-Jalil", meaning: "Le Majestueux" },
-    { arabic: "الْكَرِيم", trans: "Al-Karim", meaning: "Le Généreux" },
-    { arabic: "الرَّقِيب", trans: "Ar-Raqib", meaning: "L'Observateur" },
-    { arabic: "الْمُجِيب", trans: "Al-Mujib", meaning: "Celui qui exauce" },
-    { arabic: "الْوَاسِع", trans: "Al-Wasi'", meaning: "Le Vaste" },
-    { arabic: "الْحَكِيم", trans: "Al-Hakim", meaning: "Le Sage" },
-    { arabic: "الْوَدُود", trans: "Al-Wadud", meaning: "Le Tout-Affectueux" },
-    { arabic: "الْمَجِيد", trans: "Al-Majid", meaning: "Le Très-Glorieux" },
-    { arabic: "الْبَاعِث", trans: "Al-Ba'ith", meaning: "Celui qui ressuscite" },
-    { arabic: "الشَّهِيد", trans: "Ash-Shahid", meaning: "Le Témoin" },
-    { arabic: "الْحَقّ", trans: "Al-Haqq", meaning: "Le Vrai" },
-    { arabic: "الْوَكِيل", trans: "Al-Wakil", meaning: "Le Garant" },
-    { arabic: "الْقَوِيّ", trans: "Al-Qawiyy", meaning: "Le Fort" },
-    { arabic: "الْمَتِين", trans: "Al-Matin", meaning: "Le Robuste" },
-    { arabic: "الْوَلِيّ", trans: "Al-Waliyy", meaning: "Le Protecteur" },
-    { arabic: "الْحَمِيد", trans: "Al-Hamid", meaning: "Le Digne de louange" },
-    { arabic: "الْمُحْصِي", trans: "Al-Muhsi", meaning: "Celui qui dénombre" },
-    { arabic: "الْمُبْدِئ", trans: "Al-Mubdi", meaning: "L'Auteur" },
-    { arabic: "الْمُعِيد", trans: "Al-Mu'id", meaning: "Celui qui recrée" },
-    { arabic: "الْمُحْيِي", trans: "Al-Muhyi", meaning: "Celui qui donne la vie" },
-    { arabic: "الْمُمِيت", trans: "Al-Mumit", meaning: "Celui qui donne la mort" },
-    { arabic: "الْحَيّ", trans: "Al-Hayy", meaning: "Le Vivant" },
-    { arabic: "الْقَيُّوم", trans: "Al-Qayyum", meaning: "Le Subsistant par lui-même" },
-    { arabic: "الْوَاجِد", trans: "Al-Wajid", meaning: "L'Opulent" },
-    { arabic: "الْمَاجِد", trans: "Al-Majid", meaning: "Le Noble" },
-    { arabic: "الْوَاحِد", trans: "Al-Wahid", meaning: "L'Unique" },
-    { arabic: "الصَّمَد", trans: "As-Samad", meaning: "Le Soutien universel" },
-    { arabic: "الْقَادِر", trans: "Al-Qadir", meaning: "Le Puissant" },
-    { arabic: "الْمُقْتَدِر", trans: "Al-Muqtadir", meaning: "Le Détenteur du pouvoir" },
-    { arabic: "الْمُقَدِّم", trans: "Al-Muqaddim", meaning: "Celui qui fait avancer" },
-    { arabic: "الْمُؤَخِّر", trans: "Al-Mu'akhkhir", meaning: "Celui qui retarde" },
-    { arabic: "الْأَوَّل", trans: "Al-Awwal", meaning: "Le Premier" },
-    { arabic: "الْآخِر", trans: "Al-Akhir", meaning: "Le Dernier" },
-    { arabic: "الظَّاهِر", trans: "Az-Zahir", meaning: "L'Apparent" },
-    { arabic: "الْبَاطِن", trans: "Al-Batin", meaning: "Le Caché" },
-    { arabic: "الْوَالِي", trans: "Al-Wali", meaning: "Le Maître" },
-    { arabic: "الْمُتَعَالِي", trans: "Al-Muta'ali", meaning: "Le Sublime" },
-    { arabic: "الْبَرّ", trans: "Al-Barr", meaning: "Le Bienfaisant" },
-    { arabic: "التَّوَّاب", trans: "At-Tawwab", meaning: "Celui qui accueille le repentir" },
-    { arabic: "الْمُنْتَقِم", trans: "Al-Muntaqim", meaning: "Le Vengeur" },
-    { arabic: "الْعَفُوّ", trans: "Al-'Afuww", meaning: "L'Indulgent" },
-    { arabic: "الرَّؤُوف", trans: "Ar-Ra'uf", meaning: "Le Bienveillant" },
-    { arabic: "مَالِكُ الْمُلْك", trans: "Malik-ul-Mulk", meaning: "Le Maître du Royaume" },
-    { arabic: "ذُو الْجَلَالِ وَالْإِكْرَام", trans: "Dhul-Jalal wal-Ikram", meaning: "Le Détenteur de la Majesté" },
-    { arabic: "الْمُقْسِط", trans: "Al-Muqsit", meaning: "L'Équitable" },
-    { arabic: "الْجَامِع", trans: "Al-Jami'", meaning: "Le Rassembleur" },
-    { arabic: "الْغَنِيّ", trans: "Al-Ghaniyy", meaning: "Le Riche" },
-    { arabic: "الْمُغْنِي", trans: "Al-Mughni", meaning: "Celui qui enrichit" },
-    { arabic: "الْمَانِع", trans: "Al-Mani'", meaning: "Le Défenseur" },
-    { arabic: "الضَّار", trans: "Ad-Darr", meaning: "Celui qui peut nuire" },
-    { arabic: "النَّافِع", trans: "An-Nafi'", meaning: "L'Utile" },
-    { arabic: "النُّور", trans: "An-Nur", meaning: "La Lumière" },
-    { arabic: "الْهَادِي", trans: "Al-Hadi", meaning: "Le Guide" },
-    { arabic: "الْبَدِيع", trans: "Al-Badi'", meaning: "L'Inventeur" },
-    { arabic: "الْبَاقِي", trans: "Al-Baqi", meaning: "Le Permanent" },
-    { arabic: "الْوَارِث", trans: "Al-Warith", meaning: "L'Héritier" },
-    { arabic: "الرَّشِيد", trans: "Ar-Rashid", meaning: "Le Droit" },
-    { arabic: "الصَّبُور", trans: "As-Sabur", meaning: "Le Patient" }
-];
-
-function openNames() {
-    showScreen('screen-names');
-    const grid = document.getElementById('names-grid');
-    
-    // CORRECTION : On vide d'abord la grille pour être sûr
-    grid.innerHTML = ""; 
-    
-    // Et on la remplit
-    namesOfAllah.forEach(n => {
-        const card = document.createElement('div');
-        card.className = 'name-mini-card';
-        card.innerHTML = `
-            <div class="mini-arabic">${n.arabic}</div>
-            <div class="mini-trans">${n.trans}</div>
-        `;
-        // Au clic, on ouvre le modal avec les infos
-        card.onclick = () => openNameModal(n);
-        grid.appendChild(card);
-    });
-}
-
-// Ouvrir la carte en gros
-function openNameModal(data) {
-    const modal = document.getElementById('name-modal');
-    const card = document.querySelector('.flip-card');
-    
-    // Remplir les infos
-    document.getElementById('modal-arabic').innerText = data.arabic;
-    document.getElementById('modal-trans').innerText = data.trans;
-    document.getElementById('modal-meaning').innerText = data.meaning;
-    
-    // Reset : on remet la carte face avant
-    card.classList.remove('flipped');
-    
-    // Afficher
-    modal.style.display = 'flex';
-}
-
-// Fermer le modal
-function closeNameModal() {
-    document.getElementById('name-modal').style.display = 'none';
-}
-/* =========================================
-   MODULE WIDGET HORAIRES (AUTO) 🕰️
-   ========================================= */
-
-// Se lance automatiquement au démarrage
-setTimeout(loadWidget, 1000);
-
-function loadWidget() {
-    const savedCity = localStorage.getItem('nourCity');
-    if (savedCity) {
-        // Si on a déjà une ville, on affiche directement les horaires
-        document.getElementById('widget-search-mode').style.display = 'none';
-        document.getElementById('widget-display-mode').style.display = 'block';
-        fetchWidgetPrayers(savedCity);
-    } else {
-        // Sinon on affiche le champ de recherche
-        document.getElementById('widget-search-mode').style.display = 'block';
-        document.getElementById('widget-display-mode').style.display = 'none';
+        pCont.innerHTML = `<button class="btn-back" style="font-size:0.9rem" onclick="changePage(-1)">←</button><span style="color:rgba(255,255,255,0.5); margin:0 15px;">${currentPage} / ${totalPages}</span><button class="btn-back" style="font-size:0.9rem" onclick="changePage(1)">→</button>`;
     }
 }
 
-// 1. Initialisation quand on clique sur OK
-async function initPrayerWidget() {
-    const cityInput = document.getElementById('widget-city-input').value.trim();
-    if (!cityInput) return;
-
-    document.getElementById('widget-loading').style.display = 'block';
-    
-    // Géocodage
-    try {
-        const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityInput)}&count=1&language=fr&format=json`;
-        const response = await fetch(geoUrl);
-        const data = await response.json();
-
-        if (data.results && data.results.length > 0) {
-            const place = data.results[0];
-            // On sauvegarde tout
-            localStorage.setItem('nourCity', place.name);
-            localStorage.setItem('nourLat', place.latitude);
-            localStorage.setItem('nourLon', place.longitude);
-            
-            // On recharge le widget
-            loadWidget();
-        } else {
-            alert("Ville introuvable.");
-        }
-    } catch (e) {
-        alert("Erreur de connexion.");
-    }
-    document.getElementById('widget-loading').style.display = 'none';
+function changePage(dir) { currentPage += dir; filterHadiths(); document.getElementById('screen-list').scrollTop = 0; }
+function filterHadiths() {
+    const term = document.getElementById('searchInput').value.toLowerCase();
+    const topic = document.getElementById('topicFilter').value;
+    const filtered = hadiths.filter(h => (currentSourceFilter==="Tous"||h.source.includes(currentSourceFilter)) && (h.sujet===topic||topic==="Tous") && (h.texte.toLowerCase().includes(term)||h.source.toLowerCase().includes(term)));
+    displayHadiths(filtered);
 }
+document.getElementById('searchInput').addEventListener('input', () => { currentPage = 1; filterHadiths(); });
+document.getElementById('topicFilter').addEventListener('change', () => { currentPage = 1; filterHadiths(); });
 
-// 2. Récupération et Affichage
-async function fetchWidgetPrayers(cityName) {
-    const lat = localStorage.getItem('nourLat');
-    const lon = localStorage.getItem('nourLon');
-    
-    if(!lat || !lon) { resetCity(); return; } // Sécurité
-
-    try {
-        const url = `https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=12`;
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        if(data.code === 200) {
-            const t = data.data.timings;
-            const d = data.data.date;
-            
-            // Infos
-            document.getElementById('widget-city-name').innerText = cityName;
-            document.getElementById('widget-date').innerText = d.readable;
-            
-            // Liste
-            const list = document.getElementById('widget-prayers-list');
-            list.innerHTML = "";
-            
-            const prayers = [
-                {n:"Fajr", t:t.Fajr}, {n:"Shuruq", t:t.Sunrise},
-                {n:"Dohr", t:t.Dhuhr}, {n:"Asr", t:t.Asr},
-                {n:"Maghrib", t:t.Maghrib}, {n:"Isha", t:t.Isha}
-            ];
-            
-            // Calcul de la prochaine prière (Bonus)
-            const now = new Date();
-            const currentTime = now.getHours() * 60 + now.getMinutes();
-            let nextFound = false;
-
-            prayers.forEach(p => {
-                let cleanTime = p.t.split(' ')[0];
-                const item = document.createElement('div');
-                item.className = 'mini-prayer-item';
-                
-                // Vérif prochaine prière pour mettre en surbrillance
-                const [h, m] = cleanTime.split(':').map(Number);
-                const pTime = h * 60 + m;
-                
-                if (!nextFound && pTime > currentTime && p.n !== "Shuruq") {
-                    item.classList.add('next');
-                    nextFound = true;
-                }
-
-                item.innerHTML = `<span class="mini-prayer-name">${p.n}</span><span class="mini-prayer-time">${cleanTime}</span>`;
-                list.appendChild(item);
-            });
-        }
-    } catch (e) { console.error(e); }
-}
-
-function resetCity() {
-    localStorage.removeItem('nourCity');
-    loadWidget();
-}
-// --- FONCTION GPS POUR LE WIDGET ---
-function initWidgetByGPS() {
-    if (navigator.geolocation) {
-        // Petit message d'attente
-        document.getElementById('widget-loading').innerText = "Localisation satellite...";
-        document.getElementById('widget-loading').style.display = 'block';
-
-        navigator.geolocation.getCurrentPosition(position => {
-            // 1. On récupère les coordonnées
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-
-            // 2. On sauvegarde tout dans la mémoire du téléphone
-            localStorage.setItem('nourLat', lat);
-            localStorage.setItem('nourLon', lon);
-            localStorage.setItem('nourCity', "Ma Position"); // Nom par défaut
-
-            // 3. On recharge le widget pour afficher les heures
-            loadWidget();
-            
-            // On cache le chargement
-            document.getElementById('widget-loading').style.display = 'none';
-
-        }, () => {
-            alert("Erreur : Veuillez autoriser la localisation.");
-            document.getElementById('widget-loading').style.display = 'none';
+function openFavorites() {
+    showScreen('screen-favorites'); 
+    const cont = document.getElementById('fav-container'); cont.innerHTML = "";
+    if(favorites.length === 0) document.getElementById('no-fav-msg').style.display = "block";
+    else {
+        document.getElementById('no-fav-msg').style.display = "none";
+        favorites.forEach(h => {
+            const card = document.createElement('div'); card.className='hadith-card';
+            card.innerHTML = `<div class="hadith-header"><span class="tag">${h.sujet}</span><button class="btn-fav active" onclick="toggleFav(this, '${h.texte.replace(/'/g,"\\'")}','${h.source.replace(/'/g,"\\'")}','${h.sujet.replace(/'/g,"\\'")}'), event">♥</button></div><div class="hadith-text">« ${h.texte} »</div><div class="hadith-source">— ${h.source}</div>`;
+            cont.appendChild(card);
         });
-    } else {
-        alert("GPS non supporté sur cet appareil.");
     }
 }
+function toggleFav(btn, t, s, subj) {
+    if(event) event.stopPropagation();
+    const idx = favorites.findIndex(f => f.texte === t);
+    if(idx === -1) { favorites.push({texte:t, source:s, sujet:subj}); btn.classList.add('active'); } 
+    else { favorites.splice(idx, 1); btn.classList.remove('active'); if(document.getElementById('screen-favorites').classList.contains('active')) openFavorites(); }
+    localStorage.setItem('nourFavorites', JSON.stringify(favorites));
+}
+
 /* =========================================
-   MODULE BIOGRAPHIES 📜 (AUDIO + TEXTE)
+   4. MOTEUR QUIZ, CORAN, NOMS, BIO, HORAIRES
    ========================================= */
+let currentQuizQ = [], qIdx = 0, qScore = 0;
+window.startQuiz = function() { qIdx=0; qScore=0; let count = Math.min(10, quizData.length); currentQuizQ = [...quizData].sort(()=>0.5 - Math.random()).slice(0, count); showScreen('screen-quiz'); document.getElementById('quiz-content').style.display='block'; document.getElementById('quiz-result').style.display='none'; loadQ(); };
+function loadQ() { const q=currentQuizQ[qIdx]; document.getElementById('progress-fill').style.width=((qIdx)/currentQuizQ.length)*100+"%"; document.getElementById('question-text').innerText=q.question; const div=document.getElementById('options-container'); div.innerHTML=""; q.options.forEach((opt,i)=>{ const btn=document.createElement('button'); btn.className='option-btn'; btn.innerText=opt; btn.onclick=()=>check(i,btn); div.appendChild(btn); }); }
+function check(i,btn) { const all=document.querySelectorAll('.option-btn'); all.forEach(b=>b.disabled=true); const correct=currentQuizQ[qIdx].correct; if(i===correct){btn.classList.add('correct'); qScore++;}else{btn.classList.add('wrong'); all[correct].classList.add('correct');} setTimeout(()=>{ qIdx++; if(qIdx<currentQuizQ.length) loadQ(); else showRes(); },1500); }
+function showRes() { document.getElementById('quiz-content').style.display='none'; document.getElementById('quiz-result').style.display='block'; document.getElementById('score-number').innerText=qScore+" / "+currentQuizQ.length; }
 
-const bioData = [
-    {
-        title: "Adam (Alayhi Salam)",
-        desc: "Le premier homme.",
-        // Lien sécurisé HTTPS
-        audio: "https://ia802804.us.archive.org/3/items/Serie_Histoires_des_Prophetes_Nabil_Al-Awadi/02.%20L%27histoire%20d%27Adam%20%28partie%201%29.mp3",
-        text: `
-            <strong style="color:var(--accent)">La Création</strong><br><br>
-            Allah a créé Adam de terre. Il a ordonné aux Anges de se prosterner devant lui par respect...
-        `
-    },
-    {
-        title: "Nuh (Noé) (Alayhi Salam)",
-        desc: "La patience et l'Arche.",
-        audio: "https://ia802804.us.archive.org/3/items/Serie_Histoires_des_Prophetes_Nabil_Al-Awadi/05.%20L%27histoire%20de%20Nouh.mp3",
-        text: `
-            <strong style="color:var(--accent)">Le Déluge</strong><br><br>
-            Nuh a prêché pendant 950 ans. Face à leur refus, il construisit l'Arche pour sauver les croyants.
-        `
-    },
-    {
-        title: "Ibrahim (Abraham) (AS)",
-        desc: "L'ami intime d'Allah.",
-        audio: "https://ia802804.us.archive.org/3/items/Serie_Histoires_des_Prophetes_Nabil_Al-Awadi/09.%20L%27histoire%20d%27Ibrahim%20%28partie%201%29.mp3",
-        text: `
-            <strong style="color:var(--accent)">Le Feu</strong><br><br>
-            Allah ordonna au feu : "Sois fraîcheur et paix pour Ibrahim".
-        `
+function openNames() { showScreen('screen-names'); const g=document.getElementById('names-grid'); if(g.innerHTML==="") namesOfAllah.forEach(n=>{ const c=document.createElement('div'); c.className='name-mini-card'; c.innerHTML=`<div class="mini-arabic">${n.arabic}</div><div class="mini-trans">${n.trans}</div>`; c.onclick=()=>{document.getElementById('name-modal').style.display='flex'; document.getElementById('modal-arabic').innerText=n.arabic; document.getElementById('modal-trans').innerText=n.trans; document.getElementById('modal-meaning').innerText=n.meaning; document.querySelector('.flip-card').classList.remove('flipped');}; g.appendChild(c); }); }
+function closeNameModal() { document.getElementById('name-modal').style.display='none'; }
+
+function openQuran() { showScreen('screen-quran'); document.getElementById('surah-list-view').style.display='grid'; document.getElementById('surah-reader-view').style.display='none'; const c=document.getElementById('surah-list-view'); if(c.innerHTML==="") surahNames.forEach((n,i)=>{ const card=document.createElement('div'); card.className='dash-card'; card.style.marginBottom='0'; card.innerHTML=`<div class="dash-icon" style="font-size:1rem; width:40px; height:40px;">${i+1}</div><div class="dash-content"><h3 style="font-size:1rem; color:#fff;">${n}</h3></div><div class="dash-arrow">→</div>`; card.onclick=()=>loadSurahContent(i+1,n); c.appendChild(card); }); }
+async function loadSurahContent(num, name) { document.getElementById('surah-list-view').style.display='none'; document.getElementById('surah-reader-view').style.display='block'; document.getElementById('player-title').innerText=name; document.getElementById('quran-text-container').innerText="Chargement..."; document.getElementById('quran-audio').src=`https://server8.mp3quran.net/afs/${String(num).padStart(3,'0')}.mp3`; try{ const r=await fetch(`https://api.alquran.cloud/v1/surah/${num}/editions/quran-uthmani,fr.hamidullah`); const d=await r.json(); let html=""; if(num!==1 && num!==9) html+=`<div style="text-align:center;font-family:'Amiri',serif;font-size:1.5rem;margin-bottom:20px;color:var(--accent);">Bismillahi Rahmani Rahim</div>`; d.data[0].ayahs.forEach((a,i)=>{ html+=`<div style="margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:10px;"><div class="ayah-arabic">${a.text}</div><div class="ayah-french">${d.data[1].ayahs[i].text}</div></div>`; }); document.getElementById('quran-text-container').innerHTML=html; } catch(e){document.getElementById('quran-text-container').innerText="Erreur";} }
+function closeQuranReader() { if(document.getElementById('surah-reader-view').style.display==='block') {document.getElementById('surah-reader-view').style.display='none'; document.getElementById('surah-list-view').style.display='grid'; document.getElementById('quran-audio').pause();} else showScreen('screen-dashboard'); }
+
+function loadWidget() { const savedCity=localStorage.getItem('nourCity'); if(savedCity) {document.getElementById('widget-search-mode').style.display='none'; document.getElementById('widget-display-mode').style.display='block'; fetchWidgetPrayers(savedCity);} else {document.getElementById('widget-search-mode').style.display='block'; document.getElementById('widget-display-mode').style.display='none';} }
+async function initPrayerWidget() { const city=document.getElementById('widget-city-input').value.trim(); if(!city) return; document.getElementById('widget-loading').style.display='block'; try{const g=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=fr&format=json`); const d=await g.json(); if(d.results){const p=d.results[0]; localStorage.setItem('nourCity',p.name); localStorage.setItem('nourLat',p.latitude); localStorage.setItem('nourLon',p.longitude); loadWidget();} else alert("Ville introuvable");} catch(e){alert("Erreur");} document.getElementById('widget-loading').style.display='none'; }
+function initWidgetByGPS() { if(navigator.geolocation) {document.getElementById('widget-loading').style.display='block'; navigator.geolocation.getCurrentPosition(p=>{localStorage.setItem('nourLat',p.coords.latitude); localStorage.setItem('nourLon',p.coords.longitude); localStorage.setItem('nourCity',"Ma Position"); loadWidget(); document.getElementById('widget-loading').style.display='none';}, ()=>{alert("Activez la localisation."); document.getElementById('widget-loading').style.display='none';});} else alert("Non supporté"); }
+async function fetchWidgetPrayers(name) { const lat=localStorage.getItem('nourLat'); const lon=localStorage.getItem('nourLon'); if(!lat||!lon){resetCity();return;} try{const r=await fetch(`https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=12`); const d=await r.json(); if(d.code===200){ const t=d.data.timings; document.getElementById('widget-city-name').innerText=name; document.getElementById('widget-date').innerText=d.data.date.readable; const list=document.getElementById('widget-prayers-list'); list.innerHTML=""; const p=[{n:"Fajr",t:t.Fajr},{n:"Shuruq",t:t.Sunrise},{n:"Dohr",t:t.Dhuhr},{n:"Asr",t:t.Asr},{n:"Maghrib",t:t.Maghrib},{n:"Isha",t:t.Isha}]; const now=new Date(); const cur=now.getHours()*60+now.getMinutes(); let found=false; p.forEach(x=>{ let cl=x.t.split(' ')[0]; const div=document.createElement('div'); div.className='mini-prayer-item'; const [h,m]=cl.split(':').map(Number); if(!found && (h*60+m)>cur && x.n!=="Shuruq"){div.classList.add('next'); found=true;} div.innerHTML=`<span class="mini-prayer-name">${x.n}</span><span class="mini-prayer-time">${cl}</span>`; list.appendChild(div); }); } } catch(e){} }
+function resetCity() { localStorage.removeItem('nourCity'); loadWidget(); }
+
+// --- INIT ---
+setTimeout(() => {
+    loadWidget();
+    if(document.getElementById('totalCount')) document.getElementById('totalCount').innerText = hadiths.length;
+    if(hadiths.length>0) {
+        const d = hadiths[new Date().getDate()%hadiths.length];
+        if(document.getElementById('daily-hadith-text')) {
+            document.getElementById('daily-hadith-text').innerText = "« "+d.texte+" »";
+            document.getElementById('daily-hadith-source').innerText = "— "+d.source;
+        }
     }
-];
-
-// Fonction pour ouvrir la liste
-function openBios() {
-    showScreen('screen-bios');
-    
-    const container = document.getElementById('bio-list-view');
-    // On cache le lecteur pour être sûr de voir la liste
-    document.getElementById('bio-reader-view').style.display = 'none';
-    document.getElementById('bio-list-view').style.display = 'grid';
-
-    // On remplit la liste
-    container.innerHTML = "";
-    bioData.forEach(bio => {
-        const card = document.createElement('div');
-        card.className = 'dash-card';
-        card.style.marginBottom = '0';
-        
-        card.innerHTML = `
-            <div class="dash-icon" style="font-size: 1.5rem; width: 50px; height: 50px;">📜</div>
-            <div class="dash-content">
-                <h3 style="font-size: 1rem; color: #fff;">${bio.title}</h3>
-                <p style="font-size: 0.8rem;">${bio.desc}</p>
-            </div>
-            <div class="dash-arrow">→</div>
-        `;
-        
-        // Clic sur une histoire
-        card.onclick = () => loadBioContent(bio);
-        container.appendChild(card);
-    });
-}
-
-function loadBioContent(bio) {
-    document.getElementById('bio-list-view').style.display = 'none';
-    document.getElementById('bio-reader-view').style.display = 'block';
-    
-    document.getElementById('bio-player-title').innerText = bio.title;
-    document.getElementById('bio-text-content').innerHTML = bio.text;
-    
-    const audioPlayer = document.getElementById('bio-audio');
-    
-    // On met le lien
-    audioPlayer.src = bio.audio;
-    
-    // ASTUCE : On force le rechargement du fichier
-    audioPlayer.load(); 
-    
-    // (Optionnel) On lance la lecture directement
-    // audioPlayer.play(); 
-}
-
-// Fonction Retour
-function closeBioReader() {
-    const reader = document.getElementById('bio-reader-view');
-    
-    // Si on est dans le lecteur, on revient à la liste des histoires
-    if (reader.style.display === 'block') {
-        reader.style.display = 'none';
-        document.getElementById('bio-list-view').style.display = 'grid';
-        
-        // Important : On coupe le son quand on sort
-        const audio = document.getElementById('bio-audio');
-        audio.pause();
-        audio.currentTime = 0;
-    } else {
-        // Sinon on revient à l'accueil
-        showScreen('screen-dashboard');
-    }
-}
+}, 500);
     </script>
 </body>
 </html>
